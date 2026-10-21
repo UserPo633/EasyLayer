@@ -1,6 +1,20 @@
 # Devpost wording aligned with the current implementation
 
-Prepared October 21, 2026. This is replacement wording for review, not confirmation that the Devpost form has been changed. The user reports the required video link was submitted correctly. The actual saved Devpost description was not accessible without a new login in this session.
+Prepared October 21, 2026. After signing in, the actual Devpost submission was reviewed and corrected. The project story and additional information were saved; the finalization page showed **Submitted**, **5/5 steps done**, and **Project submitted!**. The public story and the saved additional fields were reopened to confirm the changes. The existing video URL, `https://youtu.be/TWfb95AJGbU`, was preserved. Video playback and anonymous YouTube availability were not independently retested in this review.
+
+## Saved Devpost corrections
+
+- Rewrote the public story to distinguish the deterministic browser demo from the separate MCP backend and its own simulator.
+- Distinguished the current 35 web Node tests from the historical 117 controlled backend tests, and disclosed that the film predates the latest defensive checks.
+- Added the public GitHub repository to the public “Try it out” links. The mandatory repository field already contained the correct URL.
+- Replaced Feedback Question 3, which had duplicated the Question 2 benefits answer, with evidence-based improvement feedback.
+- Corrected Question 4 to remove an unsupported service-credit defect claim and explain the verified onboarding boundaries.
+- Added the existing product feedback/A01 document as the Friction Log URL, linked `docs/JUDGING.md` for testing, and updated local run instructions and button names.
+- Preserved the existing track, mini-challenge choices, identity details, eligibility attestations, and submitted video URL. No new terms acceptance or submission was needed: edits updated the already-submitted project.
+
+Public project: https://devpost.com/software/easylayer
+
+The wording below is the alignment reference. The live form uses expanded project-story, testing, and feedback text consistent with these boundaries.
 
 ## Project scope paragraph
 
@@ -38,6 +52,6 @@ Yes. MCP is useful as an integration boundary while transaction correctness stay
 
 Use the recorded A01 entry and native-source testing discussion in `backend/docs/PRODUCT_FEEDBACK_v0.4.md` as evidence. Do not label the project's missing adapter tests or browser bugs as Amazon product defects. Do not invent account rejection, IAM errors, outage duration, credit problems, or user research. Friction logs supplement the five feedback answers; they do not replace them.
 
-## Final form comparison still required
+## Final form comparison completed
 
-Check the actual saved Devpost fields against these statements after login. Keep the submitted video URL that the user has already confirmed. Do not use the owner-private Site as an unrestricted testing link. The public GitHub repository and its local run instructions are available for judging.
+The saved Devpost fields were compared and corrected after login. The existing video URL was retained. No owner-private Site was entered as an unrestricted judge-testing link; the form now links the public repository's judging instructions. The updated public story and saved additional fields were verified through Devpost's UI.
