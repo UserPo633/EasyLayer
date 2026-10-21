@@ -13,13 +13,14 @@ export function renderScene(s,{chapter='INTERACTIVE DEMO',caption='',progress=0,
  inner+=rect(76,283,72,72,'#deeee5',19)+`<path d="M97 302h30l-4 32H101z M94 302h36" stroke="#087569" stroke-width="4" fill="none"/><path d="M104 295q10-15 20 0" stroke="#087569" stroke-width="3" fill="none"/>`;
  inner+=text(169,311,'Pottery for beginners',28,'#142d32',650)+text(169,343,'Clay House Studio · fictional provider',18,'#607270');
  inner+=`<line x1="76" y1="379" x2="894" y2="379" stroke="#e1e7e1"/>`;
- inner+=text(76,416,'SAT, NOV 14 · SAMPLE DATE',14,'#607270',650)+text(686,416,'60 MIN  /  $35',18,'#142d32',600);
+ inner+=text(76,416,'SAT, NOV 14, 2026 · SAMPLE',14,'#607270',650)+text(686,416,'60 MIN  /  USD $35',16,'#142d32',600);
  slots.forEach((slot,i)=>{inner+=rect(76+i*277,441,258,64,i===s.slot?'#0b776b':'#f0f3ee',15,i===s.slot?'#0b776b':'#d5dfd7')+text(104+i*277,481,slot,23,i===s.slot?'#fff':'#31534f',600);});
  inner+=text(76,549,'CONTACT',12,'#6d817d',650)+text(76,580,'Alex Demo',22,'#142d32',600)+text(76,609,'Fictional contact · no personal data needed',17,'#607270');
+ inner+=text(76,645,'TIME ZONE: America/Los_Angeles',12,'#607270');
  const stateLabel=({choose:'Not booked',draft:s.approved?'Approved · not booked':'Draft · not booked',paused:'Paused · not booked',unknown:'Outcome unknown',verified:'Verified sample record',conflict:'Stopped · no booking'})[s.status];
  inner+=rect(558,542,335,76,s.status==='unknown'||s.status==='conflict'?'#fff1d8':'#e5f3e9',14)+text(579,572,'CURRENT STATE',11,statusColor,650)+text(579,602,stateLabel,21,statusColor,650);
  inner+=text(978,295,'A result you can trust',25,'#142d32',650)+text(978,331,'Scenario: '+scenarios[s.scenario],17,'#536b65');
- inner+=rect(978,356,384,117,'#fff',17)+text(1001,392,'SAMPLE RECORDS',12,'#607270',650)+text(1001,446,String(s.records.length).padStart(2,'0'),48,'#0b776b',650)+text(1080,438,s.records.length?'One record. No duplicate.':'Nothing written yet.',17,'#526d67');
+ inner+=rect(978,356,384,117,'#fff',17)+text(1001,392,'SAMPLE RECORDS',12,'#607270',650)+text(1001,446,String(s.records.length).padStart(2,'0'),48,'#0b776b',650)+text(1080,438,s.records.length===1?'One sample record.':s.records.length?'Multiple records. Check needed.':'Nothing written yet.',17,'#526d67');
  inner+=text(978,512,'LATEST EVENT',12,'#607270',650);
  wrap(s.events.at(-1),35).slice(0,4).forEach((l,i)=>inner+=text(978,546+i*26,l,19,'#284e47',500));
  const step=s.status==='choose'?0:['draft','paused'].includes(s.status)?1:s.status==='verified'?3:2;

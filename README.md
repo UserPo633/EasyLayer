@@ -18,12 +18,12 @@ python -m http.server 8000 --bind 127.0.0.1 --directory web/dist
 
 Open **http://127.0.0.1:8000/** for the interactive demo, or **http://127.0.0.1:8000/watch.html** for the 2:14 English narrated film. On systems where Python is called `python3`, use that command instead. Stop the server with Ctrl+C.
 
-The demo remembers synthetic progress in browser local storage. Use **Reset demo ↺** to start over. [Judging walkthrough](docs/JUDGING.md).
+The demo attempts to keep synthetic progress in browser local storage. A visible notice reports whether saving succeeded; if storage is unavailable, work continues in this tab with a warning about refresh/close and older saved drafts. Use **Reset demo ↺** to start over. [Judging walkthrough](docs/JUDGING.md).
 
 ## What to try
 
 1. Select **Lost response after submission** in **Demo scenario**.
-2. Choose **Later**, then **Save this draft**. Pause and resume the draft.
+2. Choose **Later**, then **Create this draft**. Pause and resume the draft.
 3. Review the summary, select **I approve this exact sample appointment.**, and submit.
 4. The simulated result becomes unknown. Try a repeat submission, then **Check existing record**. The sample record is verified without creating another one.
 5. Choose **Time becomes unavailable** and repeat the review flow to see the unavailable-time case.
@@ -81,7 +81,15 @@ npm run build
 
 The static files are authored directly; `build` checks that the shipped files exist. No compilation or dependency installation is needed to run the static demo.
 
-The v0.4 backend retains historical evidence for **117 passing controlled tests**, recorded on September 29, 2026. That evidence uses test sources and does not establish native Alexa compatibility, actual PHP/MariaDB booking success, voice/browser validation, or user benefit. Current web checks are separate. See [verification notes](docs/JUDGING.md).
+The v0.4 backend retains historical evidence for **117 passing controlled tests**, recorded on September 29, 2026. That evidence uses test sources and does not establish native Alexa compatibility, actual PHP/MariaDB booking success, voice/browser validation, or user benefit. The current web demo separately passes **35 tests** covering its state machine, complete-record matching, old-state restoration, and injected storage failures. These are Node tests, not real-browser or live-service evidence. See [verification notes](docs/JUDGING.md).
+
+## October 21 verification update
+
+Both normal submission and lost-response recovery compare the same approved snapshot against the record: service and provider identifiers/names, date, time, time zone, duration, price, currency, contact, and the expected record ID. Missing fields, mismatches, or multiple records cannot produce a verified result. Unrelated existing records are preserved without another write. Older stored records without a complete approval snapshot remain unverified.
+
+The displayed draft summary now states the year, time zone, and currency explicitly. Saving is confirmed only after storage read-back; a failed write produces an in-tab-only notice. This is sample-state validation, not tamper-proof storage or production booking security.
+
+The included/submitted 134-second film is the earlier narrated walkthrough. Its normal example flow remains representative, but it does not demonstrate the new mismatch and storage-failure checks. The wording on its screen can differ from the updated demo. No new screen recording is claimed. See [the verification update](docs/VERIFICATION_UPDATE_2026-10-21.md) and [submission wording](docs/DEVPOST_TEXT_REVIEW.md).
 
 ## Rebuild the narrated film (optional)
 
