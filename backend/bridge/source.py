@@ -81,5 +81,14 @@ class NativeSource:
         if not result.get('appointment_id') or not result.get('appointment_hash'): raise SourceError('Outcome unknown')
         return {'id':str(result['appointment_id']),'hash':result['appointment_hash'],'start':start.strftime('%Y-%m-%d %H:%M:%S')}
     def verify(self,result,service,provider):
+        # A matching start is not enough: a shortened or extended appointment
+        # is different from the duration that the person reviewed. Compute the
+        # expected end from the approved service, not from source read-back.
+        try:
+            start=datetime.strptime(result['start'],'%Y-%m-%d %H:%M:%S')
+            duration=service['duration']
+            if not isinstance(duration,int) or isinstance(duration,bool) or duration<=0:return False
+            expected_end=(start+timedelta(minutes=duration)).strftime('%Y-%m-%d %H:%M:%S')
+        except (KeyError,TypeError,ValueError,OverflowError):return False
         a=variables(self.read('/reschedule/'+quote(result['hash'],safe=''))).get('appointment_data') or {}
-        return str(a.get('id'))==result['id'] and str(a.get('id_services'))==service['id'] and str(a.get('id_users_provider'))==provider['id'] and a.get('start_datetime')==result['start']
+        return isinstance(a,dict) and str(a.get('id'))==result['id'] and str(a.get('id_services'))==service['id'] and str(a.get('id_users_provider'))==provider['id'] and a.get('start_datetime')==result['start'] and a.get('end_datetime')==expected_end

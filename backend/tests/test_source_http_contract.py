@@ -34,6 +34,8 @@ class SourceFixture:
         self.drop_after_commit = False
         self.reject_registration = False
         self.bad_receipt = False
+        self.receipt_overrides = {}
+        self.receipt_omissions = set()
         self.receipt_http_error = False
         self.session_count = 0
         self.sessions = {}
@@ -101,6 +103,10 @@ class SourceFixture:
                     record = fixture.records.get(receipt_hash)
                     if record and fixture.bad_receipt:
                         record = {**record, 'id_services': 999}
+                    if record:
+                        record = {**record, **fixture.receipt_overrides}
+                        record = {key: value for key, value in record.items()
+                                  if key not in fixture.receipt_omissions}
                     return self.reply('<script>const vars = ' + json.dumps({'appointment_data': record}) + ';</script>',
                                       content_type='text/html')
                 self.reply({'error': 'not found'}, 404)
@@ -134,7 +140,8 @@ class SourceFixture:
                     record = {'id': 200 + fixture.register_count,
                               'id_services': int(data[prefix + '[id_services]']),
                               'id_users_provider': int(data[prefix + '[id_users_provider]']),
-                              'start_datetime': start}
+                              'start_datetime': start,
+                              'end_datetime': data[prefix + '[end_datetime]']}
                     fixture.records[receipt_hash] = record
                     if fixture.drop_after_commit:
                         self.close_connection = True
@@ -235,6 +242,61 @@ class NativeHTTPContractTests(unittest.TestCase):
         self.fixture.bad_receipt = False
         self.assertEqual(self.engine.verify(draft['draft_id'], 'synthetic-owner')['state'], 'verified')
         self.assertEqual(self.fixture.register_count, 1)
+
+    def test_wrong_duration_stays_unknown_and_recovers_without_another_write(self):
+        draft = self.approved()
+        self.fixture.receipt_overrides = {'end_datetime': self.day + ' 10:10:00'}
+        first = self.engine.complete(draft['draft_id'], 'synthetic-owner')
+        self.assertEqual(first['state'], 'unknown')
+        self.assertFalse(first['verified'])
+        self.assertEqual(self.engine.verify(draft['draft_id'], 'synthetic-owner')['state'], 'unknown')
+        self.assertEqual(self.engine.complete(draft['draft_id'], 'synthetic-owner')['state'], 'unknown')
+        self.fixture.receipt_overrides = {}
+        self.assertEqual(self.engine.verify(draft['draft_id'], 'synthetic-owner')['state'], 'verified')
+        self.assertEqual((self.fixture.register_count, len(self.fixture.records)), (1, 1))
+
+    def test_missing_receipt_end_time_fails_closed_after_restart(self):
+        draft = self.approved()
+        self.fixture.receipt_omissions = {'end_datetime'}
+        self.assertEqual(self.engine.complete(draft['draft_id'], 'synthetic-owner')['state'], 'unknown')
+        restarted = Engine(Store(self.store.path), lambda: NativeSource(self.base), 'http://127.0.0.1:8092')
+        self.assertEqual(restarted.verify(draft['draft_id'], 'synthetic-owner')['state'], 'unknown')
+        self.assertEqual(restarted.complete(draft['draft_id'], 'synthetic-owner')['state'], 'unknown')
+        self.assertEqual(self.fixture.register_count, 1)
+
+    def test_every_receipt_identity_and_time_field_is_required_and_must_match(self):
+        draft = self.approved()
+        self.fixture.receipt_http_error = True
+        self.assertEqual(self.engine.complete(draft['draft_id'], 'synthetic-owner')['state'], 'unknown')
+        self.fixture.receipt_http_error = False
+        replacements = {'id': 999, 'id_services': 999, 'id_users_provider': 999,
+                        'start_datetime': self.day + ' 11:00:00',
+                        'end_datetime': self.day + ' 11:00:00'}
+        for field, value in replacements.items():
+            with self.subTest(field=field, fault='mismatch'):
+                self.fixture.receipt_overrides = {field: value}
+                self.assertEqual(self.engine.verify(draft['draft_id'], 'synthetic-owner')['state'], 'unknown')
+            with self.subTest(field=field, fault='missing'):
+                self.fixture.receipt_overrides = {}
+                self.fixture.receipt_omissions = {field}
+                self.assertEqual(self.engine.verify(draft['draft_id'], 'synthetic-owner')['state'], 'unknown')
+                self.fixture.receipt_omissions = set()
+        self.assertEqual(self.engine.verify(draft['draft_id'], 'synthetic-owner')['state'], 'verified')
+        self.assertEqual(self.fixture.register_count, 1)
+
+    def test_expected_end_time_handles_next_day_duration(self):
+        source = NativeSource(self.base)
+        catalog = source.load()
+        service = {**catalog['services'][0], 'duration': 90}
+        provider = catalog['providers'][0]
+        self.fixture.hours = ['23:45']
+        result = source.register(service, provider, self.day, '23:45', {'first_name': 'Synthetic'})
+        next_day = (date.fromisoformat(self.day) + timedelta(days=1)).isoformat()
+        record = self.fixture.records[result['hash']]
+        self.assertEqual(record['end_datetime'], next_day + ' 01:15:00')
+        self.assertTrue(source.verify(result, service, provider))
+        self.fixture.receipt_overrides = {'end_datetime': self.day + ' 01:15:00'}
+        self.assertFalse(source.verify(result, service, provider))
 
     def test_readback_http_error_recovers_with_receipt_without_resubmit(self):
         draft = self.approved()

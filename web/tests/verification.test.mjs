@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {initial, transition, bookingFields, restoreState, recordMatchesApproval} from '../dist/engine.mjs';
+import {initial, transition, bookingFields, restoreState, recordMatchesApproval, verificationReport} from '../dist/engine.mjs';
 const run = (s, ...actions) => actions.reduce(transition, s);
 for (const field of [...bookingFields, 'id']) {
   test(`both confirmation routes reject a changed or missing ${field}`, () => {
@@ -59,4 +59,35 @@ test('a restored record without explicit approval cannot stay verified', () => {
   const s = run(initial(), 'draft', 'approve', 'submit'); s.approved = false;
   assert.equal(restoreState(s).status, 'unknown');
   s.status = 'unknown'; assert.equal(transition(s, 'verify').status, 'unknown');
+});
+test('the mismatch scenario reveals the conflicting service and never creates a second record', () => {
+  let s=run(initial('mismatch'),'draft','approve','submit');
+  assert.equal(s.status,'unknown');assert.equal(s.records.length,1);
+  const report=verificationReport(s), mismatch=report.checks.find(check=>check.key==='service');
+  assert.equal(report.verified,false);assert.equal(mismatch.matches,false);
+  assert.equal(mismatch.expected,'Pottery for beginners');assert.match(mismatch.observed,/different sample service/);
+  assert.equal(report.checks.filter(check=>!check.matches).length,1);
+  const records=structuredClone(s.records);
+  s=run(s,'verify','submit','verify','submit');
+  assert.equal(s.status,'unknown');assert.equal(s.attempts,1);assert.deepEqual(s.records,records);
+});
+test('the verification report explains approval, record-count and record-ID failures', () => {
+  const complete=run(initial(),'draft','approve','submit');
+  assert.equal(verificationReport(complete).verified,true);
+  for(const [key,mutate] of [
+    ['approval',s=>{s.approved=false;}],
+    ['recordCount',s=>{s.records.push({...s.records[0]});}],
+    ['id',s=>{delete s.expectedRecordId;}]
+  ]) {
+    const s=structuredClone(complete);mutate(s);const report=verificationReport(s);
+    assert.equal(report.verified,false);assert.equal(report.eligible,false);
+    assert.equal(report.checks.find(check=>check.key===key).matches,false);
+  }
+});
+test('reporting missing fields is read-only and never reconstructs receipt evidence', () => {
+  const s=run(initial('lost'),'draft','approve','submit');delete s.records[0].provider;
+  const before=structuredClone(s),report=verificationReport(s);
+  assert.equal(report.verified,false);assert.equal(report.checks.find(check=>check.key==='provider').observed,'Missing');
+  assert.deepEqual(s,before);
+  assert.ok(report.checks.every(check=>typeof check.matches==='boolean'&&typeof check.expected==='string'&&typeof check.observed==='string'));
 });

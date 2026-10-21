@@ -26,7 +26,9 @@ The demo attempts to keep synthetic progress in browser local storage. A visible
 2. Choose **Later**, then **Create this draft**. Pause and resume the draft.
 3. Review the summary, select **I approve this exact sample appointment.**, and submit.
 4. The simulated result becomes unknown. Try a repeat submission, then **Check existing record**. The sample record is verified without creating another one.
-5. Choose **Time becomes unavailable** and repeat the review flow to see the unavailable-time case.
+5. Choose **Record details do not match** and submit an approved draft. The evidence table identifies the different service, the outcome stays unknown, and another submission is blocked.
+6. Choose **Time becomes unavailable** and repeat the review flow. That unavailable time stays excluded as you cycle through choices.
+7. Open a second tab at the same origin. Change progress in one tab; the older tab must load the saved progress before it can change the draft.
 
 The browser's guided commands (`later`, `earlier`, `pause`, `resume`, `read summary`) are deterministic. They do not call an LLM. The sample response-loss case is an illustrative, recoverable scenario; the backend cannot guarantee recovery after every lost response.
 
@@ -44,7 +46,7 @@ The browser's guided commands (`later`, `earlier`, `pause`, `resume`, `read summ
 | `docs/JUDGING.md` | Testing steps and evidence boundaries |
 | `LICENSE` | Complete GNU GPL version 3 license text |
 
-The downloadable `web/dist/assets/EasyLayer_Source_v0.4.zip` is also retained so the browser demo's source-download link works offline.
+The earlier `web/dist/assets/EasyLayer_Source_v0.4.zip` is retained as an archived asset. The current backend source, including later verification fixes, is in `backend/`; the site links to that current source.
 
 ## Run the separate MCP backend
 
@@ -81,7 +83,7 @@ npm run build
 
 The static files are authored directly; `build` checks that the shipped files exist. No compilation or dependency installation is needed to run the static demo.
 
-The v0.4 backend retains historical evidence for **117 passing controlled tests**, recorded on September 29, 2026. That evidence uses test sources and does not establish native Alexa compatibility, actual PHP/MariaDB booking success, voice/browser validation, or user benefit. The current web demo separately passes **35 tests** covering its state machine, complete-record matching, old-state restoration, and injected storage failures. These are Node tests, not real-browser or live-service evidence. See [verification notes](docs/JUDGING.md).
+The v0.4 backend retains historical evidence for **117 passing controlled tests**, recorded on September 29, 2026. That evidence uses test sources and does not establish native Alexa compatibility, actual PHP/MariaDB booking success, voice/browser validation, or user benefit. The current web demo separately passes **59 Node tests** covering its state machine, complete-record matching, restoration, storage failures, stale-tab protection, and summary/evidence rendering. These are Node tests, not real-browser or live-service evidence. See [verification notes](docs/JUDGING.md).
 
 ## October 21 verification update
 
@@ -90,6 +92,14 @@ Both normal submission and lost-response recovery compare the same approved snap
 The displayed draft summary now states the year, time zone, and currency explicitly. Saving is confirmed only after storage read-back; a failed write produces an in-tab-only notice. This is sample-state validation, not tamper-proof storage or production booking security.
 
 The included/submitted 134-second film is the earlier narrated walkthrough. Its normal example flow remains representative, but it does not demonstrate the new mismatch and storage-failure checks. The wording on its screen can differ from the updated demo. No new screen recording is claimed. See [the verification update](docs/VERIFICATION_UPDATE_2026-10-21.md) and [submission wording](docs/DEVPOST_TEXT_REVIEW.md).
+
+## Recovery and accessible-review follow-up
+
+The interactive demo now exposes a service-mismatch scenario and an expected-versus-observed verification table. Its semantic appointment summary is available at every screen size, guided summary text includes all displayed approval details, and replaced controls restore keyboard focus. These behaviors have code/unit evidence; real browser and assistive-technology validation remain open.
+
+Rendering no longer saves state. A storage session checks for changes from other tabs before a write, preserves submitted sample records from stale-tab overwrites, and asks the person to load saved progress after a conflict. This is best-effort localStorage detection, not an atomic concurrency guarantee. State version 3 retains unavailable-slot history; ambiguous older histories require reset.
+
+The separate backend also checks receipt end time against approved start plus duration. **44 targeted Python tests passed** in this follow-up (14 core, 12 lifecycle, 18 HTTP contract). The full MCP-chain test was not rerun because its dependencies were absent; no live PHP/MariaDB test is claimed. See [development details](docs/DEVELOPMENT_UPDATE_2026-10-21.md).
 
 ## Rebuild the narrated film (optional)
 

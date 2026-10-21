@@ -16,6 +16,10 @@ Public project: https://devpost.com/software/easylayer
 
 The wording below is the alignment reference. The live form uses expanded project-story, testing, and feedback text consistent with these boundaries.
 
+## Follow-up development reflected in Devpost
+
+The saved public story, testing instructions, and improvement feedback were subsequently updated for the recovery/accessibility follow-up. The current count is 59 web Node tests, plus a separate 44-test targeted Python run. The new mismatch scenario, evidence table, stale-tab guard, unavailable-slot persistence, semantic summaries, and backend duration verification are described with their limitations. The saved fields were reopened and the finalization page remained Submitted (5/5). The video URL was preserved. See `DEVELOPMENT_UPDATE_2026-10-21.md`.
+
 ## Project scope paragraph
 
 EasyLayer is an Alexa+ experience simulation that helps a person complete a sample booking through clear choices, a recoverable draft, explicit approval, and an honest result. Its difficult case is a lost submission response: the demo keeps the outcome unknown, blocks a repeat submission, and checks the existing sample record before displaying success. The latest browser demo compares every approved booking field and the expected record ID, and it reports when browser storage cannot save progress.
@@ -24,7 +28,7 @@ The interactive browser demo is a deterministic simulation using fictional data.
 
 ## Testing and video paragraph
 
-The current browser demo passes 35 Node tests covering draft state, approval, complete-record verification, old-state restoration, and storage failures. Separately, the earlier v0.4 backend release recorded 117 passing controlled tests. These are different test suites and do not prove native Alexa compatibility, real PHP/MariaDB booking success, real-browser behavior, or user-study results.
+The current browser demo passes 59 Node tests covering draft state, approval, complete-record verification, old-state restoration, and storage failures. Separately, the earlier v0.4 backend release recorded 117 passing controlled tests. These are different test suites and do not prove native Alexa compatibility, real PHP/MariaDB booking success, real-browser behavior, or user-study results.
 
 The 134-second English narrated demo is an automated illustrated walkthrough of the sample booking flow. It was produced before the latest verification and storage-error update and has not been re-recorded for those checks. The repository contains the current runnable demo, full source, assets, and setup instructions.
 

@@ -28,4 +28,4 @@ The original 117 backend tests are historical evidence and were not rerun or rel
 
 ## Film and submission boundaries
 
-The earlier 134-second narrated film remains included unchanged. Its successful-storage scenario and lost-response story remain representative, but it does not demonstrate these new defensive checks. The current video page and README disclose that difference. Review wording is in `docs/DEVPOST_TEXT_REVIEW.md`; the actual saved Devpost form still requires authenticated comparison.
+The earlier 134-second narrated film remains included unchanged. Its successful-storage scenario and lost-response story remain representative, but it does not demonstrate these new defensive checks. The current video page and README disclose that difference. Review wording is in `docs/DEVPOST_TEXT_REVIEW.md`; authenticated comparison and corrections were subsequently completed, as recorded in that review document. Later development and its separate validation are documented in `DEVELOPMENT_UPDATE_2026-10-21.md`.
