@@ -1,0 +1,18 @@
+{
+  "name": "easylayer",
+  "version": "0.4.0",
+  "private": true,
+  "description": "MCP booking bridge and optional conversational display for Easy!Appointments",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test ui/flow.test.cjs ui/source.test.cjs tests/session.test.cjs tests/dom.test.cjs tests/mcp-view.test.cjs tests/simulator-ui.test.cjs",
+    "test:live": "node tests/live-e2e.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0",
+    "playwright": "1.62.1"
+  }
+}

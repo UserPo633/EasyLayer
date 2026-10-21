@@ -1,0 +1,13 @@
+{
+  "gate": "docker stack",
+  "command": [
+    "docker",
+    "compose",
+    "up",
+    "-d",
+    "--build"
+  ],
+  "status": "blocked",
+  "passed": false,
+  "reason": "docker executable unavailable in this runtime"
+}

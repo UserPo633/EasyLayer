@@ -1,0 +1,10 @@
+.env
+.local-admin.json
+__pycache__/
+evidence/*-private.*
+node_modules/
+.local/
+*.log
+evidence/*-private.*
+
+.venv/

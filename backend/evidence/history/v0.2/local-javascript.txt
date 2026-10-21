@@ -1,0 +1,45 @@
+
+> easylayer@0.2.0 test
+> node --test ui/flow.test.cjs ui/source.test.cjs tests/session.test.cjs tests/dom.test.cjs
+
+✔ DOM: initial render, language switch, and basic date/time conversation (190.226585ms)
+✔ DOM: final review shows contacts; production controller recovers fixture conflict with a new approval (87.91621ms)
+✔ DOM: language change keeps typed contacts and clears confirmation (74.441427ms)
+✔ DOM: unsupported speech and unavailable AI keep touch controls usable (57.913641ms)
+✔ DOM: lost-response fixture cannot be submitted twice (70.975993ms)
+✔ DOM source parsing respects HttpOnly page contract and unsupported custom required fields (13.441995ms)
+✔ conversation preserves contact, rechecks availability and resolves visible ordinal (21.024734ms)
+✔ source slot competition returns alternatives and requires a fresh approval (1.832879ms)
+✔ a double confirmation produces one POST only (0.596445ms)
+✔ lost response remains locked after reload and stores no contact (0.722594ms)
+✔ known result can be verified after reload without re-posting (0.742734ms)
+✔ storage failure blocks reservation before POST (1.00024ms)
+✔ catalog price and provider timezone changes invalidate confirmation (2.597015ms)
+✔ model submission, unknown fields, stale plans and hidden ordinals cannot execute (0.92628ms)
+✔ invalid dates, IDs and invalid contact cannot reach confirmation (0.762995ms)
+✔ basic commands respect next week, ordinals and refuse compound or negated requests (3.432257ms)
+✔ contact fields never enter planner context (0.768993ms)
+✔ changing time retains contact but invalidates prior approval (20.164644ms)
+✔ double activation creates one record (0.857726ms)
+✔ full slot preserves input, clears slot and requires revised approval (0.971597ms)
+✔ lost response locks changes and retry; lookup recovers original record (0.848283ms)
+✔ missing confirmation evidence never becomes success (0.484437ms)
+✔ required field errors and optional email (1.15341ms)
+✔ changing service clears time, keeps contacts, updates price (0.445849ms)
+✔ receipt contains no contact information (0.564076ms)
+✔ parses nested JSON with escaped quotes without executing following code (1.746429ms)
+✔ changed source contract fails closed (0.385979ms)
+✔ HTTP requests use original IDs, session token and latest availability (0.73983ms)
+✔ missing CSRF prevents request (0.342785ms)
+✔ registration uses source duration and excludes unknown customer fields (0.778888ms)
+✔ server acknowledgment alone is not verification (0.303465ms)
+✔ uses the page CSRF token when the source cookie is HttpOnly (0.429054ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 841.354019
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.

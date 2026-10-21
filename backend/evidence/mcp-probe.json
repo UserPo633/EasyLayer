@@ -1,0 +1,18 @@
+{
+  "executed_at": "2026-09-29T22:50:16.062556+00:00",
+  "protocol_version": "2025-11-25",
+  "tools": [
+    "list_services",
+    "find_available_times",
+    "create_booking_draft",
+    "get_booking_status",
+    "resume_booking",
+    "cancel_booking_draft",
+    "complete_booking",
+    "verify_booking"
+  ],
+  "ui_mime_type": "text/html;profile=mcp-app",
+  "source_catalog": "not_requested",
+  "alexa_runtime_verified": false,
+  "reservation_created": false
+}

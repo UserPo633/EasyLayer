@@ -1,0 +1,203 @@
+{
+  "version": "0.4.0",
+  "executed_at": "2026-09-29T22:48:53.536759+00:00",
+  "checks": [
+    {
+      "name": "javascript",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "bridge_python",
+      "command": [
+        "/workspace/scratch/0faafab8fae1/.venv-v04/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "bridge",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "lifecycle_python",
+      "command": [
+        "/workspace/scratch/0faafab8fae1/.venv-v04/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_bridge_lifecycle.py",
+        "-v"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "source_http_python",
+      "command": [
+        "/workspace/scratch/0faafab8fae1/.venv-v04/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_source_http_contract.py",
+        "-v"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "mcp-app-build",
+      "command": [
+        "npm",
+        "--prefix",
+        "bridge/app",
+        "run",
+        "build"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "planner_python",
+      "command": [
+        "/workspace/scratch/0faafab8fae1/.venv-v04/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "planner",
+        "-p",
+        "test_*.py"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-connected",
+      "command": [
+        "node",
+        "--check",
+        "ui/connected.js"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-booking-session",
+      "command": [
+        "node",
+        "--check",
+        "ui/booking-session.js"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-basic-commands",
+      "command": [
+        "node",
+        "--check",
+        "ui/basic-commands.js"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-source",
+      "command": [
+        "node",
+        "--check",
+        "ui/source.js"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-simulator",
+      "command": [
+        "node",
+        "--check",
+        "bridge/simulator/app.js"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-live-e2e",
+      "command": [
+        "node",
+        "--check",
+        "tests/live-e2e.cjs"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-python",
+      "command": [
+        "/workspace/scratch/0faafab8fae1/.venv-v04/bin/python",
+        "-m",
+        "py_compile",
+        "planner/server.py",
+        "scripts/check_source.py",
+        "scripts/start_demo.py",
+        "scripts/preflight.py",
+        "scripts/benchmark_bedrock.py",
+        "bridge/server.py",
+        "bridge/core.py",
+        "bridge/source.py",
+        "bridge/simulator_host.py",
+        "scripts/start_bridge.py",
+        "scripts/probe_mcp.py",
+        "scripts/verify_source_live.py"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "unchanged_upstream_sha256",
+      "passed": true,
+      "sha256": "299f8da75583ea185992ece4ac0b10e98f673825edbf75116446d99001911e60"
+    },
+    {
+      "name": "test_counts_observed",
+      "passed": true
+    }
+  ],
+  "local_gates_passed": true,
+  "evidence_scope": "Real loopback simulator host -> official MCP SDK HTTP -> Engine -> NativeSource -> source-shaped HTTP fixture; lifecycle/JWT/ownership checks; jsdom state tests; fake-client planner tests; MCP Apps bundle build. No real PHP source or browser.",
+  "test_counts": {
+    "javascript": 47,
+    "bridge_python": 33,
+    "lifecycle_python": 12,
+    "source_http_python": 15,
+    "planner_python": 10
+  },
+  "total_tests": 117,
+  "alexa_runtime": "not_run: native Alexa is outside the hackathon simulation path",
+  "oauth_account_linking": "not_run: external authorization server not configured",
+  "mcp_protocol": "2025-11-25 initialize, tools/list, tools/call, resources/read exercised by actual HTTP tests",
+  "mcp_apps_host_rendering": "not_run: bundle and resource protocol tested, host rendering not verified",
+  "live_docker_booking": "not_run: docker/PHP/MariaDB absent in this workspace",
+  "live_bedrock": "not_run: guided v0.4 simulator does not call Bedrock; older planner fake-client tests only",
+  "browser_visual_and_speech": "not_run: no real browser render or speech test in this execution",
+  "user_research": "not_run: intended-user hypothesis only",
+  "github_workflow": "written_not_run",
+  "public_deployment": "not_performed",
+  "submission_video": "not_recorded",
+  "final_javascript_recheck_at": "2026-09-29T22:51:20.918898+00:00"
+}

@@ -1,0 +1,20 @@
+test_engine_full_http_path_verifies_and_repeats_without_post (test_source_http_contract.NativeHTTPContractTests.test_engine_full_http_path_verifies_and_repeats_without_post) ... ok
+test_live_runner_defaults_to_read_only_on_http_fixture (test_source_http_contract.NativeHTTPContractTests.test_live_runner_defaults_to_read_only_on_http_fixture) ... ok
+test_live_runner_explicit_fixture_booking_uses_real_adapter_once (test_source_http_contract.NativeHTTPContractTests.test_live_runner_explicit_fixture_booking_uses_real_adapter_once) ... ok
+test_malformed_availability_fails_closed (test_source_http_contract.NativeHTTPContractTests.test_malformed_availability_fails_closed) ... ok
+test_mismatched_receipt_never_claims_success_then_recovers_read_only (test_source_http_contract.NativeHTTPContractTests.test_mismatched_receipt_never_claims_success_then_recovers_read_only) ... ok
+test_missing_catalog_fails_closed (test_source_http_contract.NativeHTTPContractTests.test_missing_catalog_fails_closed) ... ok
+test_prepost_http_failure_retains_approval_then_retries_once (test_source_http_contract.NativeHTTPContractTests.test_prepost_http_failure_retains_approval_then_retries_once) ... ok
+test_price_change_requires_fresh_review_without_register (test_source_http_contract.NativeHTTPContractTests.test_price_change_requires_fresh_review_without_register) ... ok
+test_readback_http_error_recovers_with_receipt_without_resubmit (test_source_http_contract.NativeHTTPContractTests.test_readback_http_error_recovers_with_receipt_without_resubmit) ... ok
+test_real_adapter_cookie_html_csrf_form_encoding_and_readback (test_source_http_contract.NativeHTTPContractTests.test_real_adapter_cookie_html_csrf_form_encoding_and_readback) ... ok
+test_response_lost_after_commit_does_not_create_second_booking (test_source_http_contract.NativeHTTPContractTests.test_response_lost_after_commit_does_not_create_second_booking) ... ok
+test_simulator_mcp_native_adapter_full_http_chain (test_source_http_contract.NativeHTTPContractTests.test_simulator_mcp_native_adapter_full_http_chain) ... ok
+test_slot_disappearance_stops_before_register (test_source_http_contract.NativeHTTPContractTests.test_slot_disappearance_stops_before_register) ... ok
+test_source_rejection_without_receipt_remains_unknown_and_is_not_retried (test_source_http_contract.NativeHTTPContractTests.test_source_rejection_without_receipt_remains_unknown_and_is_not_retried) ... ok
+test_unsupported_consent_hands_off_before_creating_draft (test_source_http_contract.NativeHTTPContractTests.test_unsupported_consent_hands_off_before_creating_draft) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 2.450s
+
+OK

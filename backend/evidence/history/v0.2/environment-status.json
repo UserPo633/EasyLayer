@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "checked_at": "2026-09-21T12:08:51.250390+00:00",
+  "current_evidence": "release-checks.json",
+  "preflight": "preflight.json",
+  "historical_evidence": "history/2026-09-13",
+  "live_source": false,
+  "live_bedrock": false,
+  "browser_visual": false,
+  "DOM_tests": "jsdom only, see local-javascript.txt"
+}

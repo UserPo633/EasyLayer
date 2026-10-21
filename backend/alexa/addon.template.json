@@ -1,0 +1,28 @@
+{
+  "manifestVersion": "1.0",
+  "storeListing": {
+    "distributionCountries": ["US"],
+    "locales": {
+      "en-US": {
+        "default": "DEFAULT",
+        "name": {"value": "EasyLayer"},
+        "shortDescription": "Find a class, review your booking, and check the original reservation result.",
+        "fullDescription": "EasyLayer is a prototype booking assistant for a supported class booking service. Browse classes, find available times, create a booking draft, and check its status. This version uses a companion page for contact entry and approval. Booking completion requires verification against the original service record.",
+        "examplePhrases": ["Find photography classes with EasyLayer", "Find available afternoon times with EasyLayer", "Check my EasyLayer booking"],
+        "privacyAndCompliance": {"privacyPolicyUrl": "https://replace-me.invalid/privacy", "termsOfUseUrl": "https://replace-me.invalid/terms"},
+        "mediaAssets": {
+          "icons": {"light": [
+            {"size":"72x72","uri":"https://replace-me.invalid/icon-72.png"},
+            {"size":"64x64","uri":"https://replace-me.invalid/icon-64.png"},
+            {"size":"88x88","uri":"https://replace-me.invalid/icon-88.png"},
+            {"size":"126x126","uri":"https://replace-me.invalid/icon-126.png"},
+            {"size":"180x180","uri":"https://replace-me.invalid/icon-180.png"},
+            {"size":"241x241","uri":"https://replace-me.invalid/icon-241.png"}
+          ]},
+          "carouselImages": [{"uri":"https://replace-me.invalid/carousel.png","altText":"EasyLayer booking summary","size":"600x900"}]
+        }
+      }
+    }
+  },
+  "integrations": [{"type":"MCP","config":{"endpoints":{"default":{"type":"HTTPS","uri":"https://replace-me.invalid/mcp"}}}}]
+}

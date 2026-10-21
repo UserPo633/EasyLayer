@@ -1,0 +1,107 @@
+{
+  "version": "0.2.0",
+  "executed_at": "2026-09-21T12:08:17.942550+00:00",
+  "checks": [
+    {
+      "name": "javascript",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "planner",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "planner",
+        "-p",
+        "test_*.py"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-connected",
+      "command": [
+        "node",
+        "--check",
+        "ui/connected.js"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-booking-session",
+      "command": [
+        "node",
+        "--check",
+        "ui/booking-session.js"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-basic-commands",
+      "command": [
+        "node",
+        "--check",
+        "ui/basic-commands.js"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-source",
+      "command": [
+        "node",
+        "--check",
+        "ui/source.js"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-live-e2e",
+      "command": [
+        "node",
+        "--check",
+        "tests/live-e2e.cjs"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "syntax-python",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "py_compile",
+        "planner/server.py",
+        "scripts/check_source.py",
+        "scripts/start_demo.py",
+        "scripts/preflight.py",
+        "scripts/benchmark_bedrock.py"
+      ],
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "unchanged_upstream_sha256",
+      "passed": true,
+      "sha256": "299f8da75583ea185992ece4ac0b10e98f673825edbf75116446d99001911e60"
+    }
+  ],
+  "local_gates_passed": true,
+  "evidence_scope": "state/adapter tests + jsdom event-flow tests + fake-client model tests; not real browser or source",
+  "live_docker_booking": "not_run: docker/PHP/MariaDB absent; package setup blocked by environment UID/GID restrictions",
+  "live_bedrock": "not_run: AWS model/region/auth not configured",
+  "browser_visual_and_speech": "not_run: cloud browser rejected local file URL by security policy",
+  "github_workflow": "written_not_run",
+  "public_deployment": "not_performed"
+}

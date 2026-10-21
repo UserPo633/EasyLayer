@@ -1,0 +1,77 @@
+name: Verify EasyLayer
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  mcp-bridge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bridge and view dependencies
+        run: |
+          python -m pip install -r bridge/requirements.txt -r planner/requirements.txt
+          npm ci --ignore-scripts
+          npm --prefix bridge/app ci --ignore-scripts
+      - name: Build MCP Apps view and verify HTTP booking protocol
+        run: |
+          python scripts/verify_local.py
+  source-and-ui:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          npm ci --ignore-scripts
+          python -m pip install -r bridge/requirements.txt
+      - name: Unit and contract tests
+        run: |
+          npm test
+          python -m unittest discover -s planner -p 'test_*.py'
+          node --check ui/connected.js
+      - name: Install browser test dependency
+        run: |
+          npx playwright install --with-deps chromium
+      - name: Build and seed owned source
+        run: python scripts/start_demo.py
+      - name: Native source verification
+        run: |
+          python scripts/verify_source_live.py
+          python scripts/verify_source_live.py --book-fixture
+          python scripts/check_source.py
+      - name: Actual connected UI and source-conflict verification
+        run: npm run test:live
+      - name: Record image digests
+        if: success()
+        run: docker image inspect mariadb:10.11.14 --format '{{json .RepoDigests}}' > evidence/db-image-digests.json
+      - name: Keep verification results (synthetic data only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: easylayer-verification
+          path: |
+            evidence/preflight.json
+            evidence/native-check.json
+            evidence/native-adapter-live-*.json
+            evidence/live-e2e.json
+            evidence/live-*.png
+            evidence/db-image-digests.json
+      - name: Stop test services
+        if: always()
+        run: docker compose down

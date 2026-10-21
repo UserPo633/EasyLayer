@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><title>EasyLayer · Clear choices, together</title>
+<style>:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI','Noto Sans KR',sans-serif;color:#203a32;background:#f5f5ee;font-size:18px;line-height:1.55;--green:#1f654d;--muted:#586b61;--border:#dce3d8}*{box-sizing:border-box}body{margin:0}header,main,footer{max-width:1220px;margin:auto;padding:24px 38px}header{display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid var(--border)}a{color:var(--green)}.brand{display:flex;align-items:center;gap:9px;font-weight:750;font-size:29px;letter-spacing:-1px;text-decoration:none}.brand-icon{display:grid;place-items:center;width:37px;height:37px;background:#dce9b7;border-radius:12px;font-size:32px;font-weight:650;font-style:italic}.brand-dot{color:#6d8c29;margin-left:-8px}.header-actions{display:flex;align-items:center;gap:12px}.badge{font-size:12px;font-weight:650;background:#e8edde;border:1px solid #d2dec4;padding:7px 12px;border-radius:30px}.intro{padding:25px 0 10px}.eyebrow{font-size:11px;font-weight:750;letter-spacing:1.8px;color:#63754f}.intro h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(38px,5vw,56px);font-weight:400;letter-spacing:-1.6px;line-height:1.15;margin:13px 0}.intro>p:last-child{color:var(--muted);margin:14px 0 22px}.connection{font-size:13px;color:var(--muted);margin:0 0 13px}.layout{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(280px,1fr);gap:25px;align-items:start}.card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:30px}.step-row{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted);margin-bottom:18px}.live-dot:before{content:'';display:inline-block;width:6px;height:6px;border-radius:100%;background:#7b9e5c;margin-right:7px}h2{font-size:27px;letter-spacing:-.6px;line-height:1.25;margin:0 0 16px}h3{font-size:17px;margin:0}.assistant-line{color:var(--muted);margin-top:0;min-height:28px}p{overflow-wrap:anywhere}button,input,textarea,select{font:inherit}button{cursor:pointer;min-height:52px;border:1px solid #a6b7a8;border-radius:12px;padding:12px 17px;background:white;color:#203a32;touch-action:manipulation}button:hover{background:#f1f5e9;border-color:#748c70}button:disabled{opacity:.5;cursor:default}.primary{background:var(--green);color:#fff;border-color:var(--green);font-weight:650}.primary:hover{background:#154e3a}.quiet{min-height:44px;font-size:14px;padding:8px 11px;border-color:transparent;background:transparent}.options{display:grid;gap:12px;margin:20px 0}.option{text-align:left;padding:17px 19px;border-color:var(--border);display:flex;justify-content:space-between;align-items:center;gap:10px}.option strong{font-size:18px;font-weight:650}.option small{display:block;font-size:13px;color:var(--muted);margin-top:4px}.option .arrow{font-size:22px;color:#6c8561}.number{display:inline-grid;place-items:center;background:#edf2e4;width:30px;height:30px;border-radius:9px;margin-right:12px}.row{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}.row .primary{margin-left:auto}.notice{background:#fff3dc;color:#654510;border:1px solid #e9d29b;border-radius:12px;padding:15px;margin:16px 0}.summary{background:#fdfef9;position:sticky;top:20px}.summary h2{font-size:23px}.summary .eyebrow{font-size:10px}.summary-item{padding:17px 0;border-bottom:1px solid var(--border)}.summary-item .label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}.summary-item strong{font-weight:600}.summary-item .quiet{padding:3px 0;display:block;color:var(--green);min-height:36px;text-decoration:underline;text-underline-offset:4px}.summary-footer{display:flex;align-items:center;gap:12px;font-size:13px;margin:21px 0;color:var(--muted)}.summary-footer>span{background:#e9f1d8;border-radius:100%;width:30px;height:30px;display:grid;place-items:center;color:var(--green)}#original{font-size:13px;text-underline-offset:4px}.empty{color:var(--muted);padding:25px 0}.conversation{border-top:1px solid var(--border);margin-top:28px;padding-top:22px}.conversation-heading{display:flex;justify-content:space-between;gap:10px;align-items:center}label{display:block;font-size:15px;font-weight:600;margin:14px 0 6px}input,textarea,select{width:100%;border:1px solid #9cad9d;border-radius:10px;padding:12px 14px;background:#fff;min-height:50px;color:#203a32}textarea{resize:vertical;display:block}.check{display:flex;align-items:center;gap:9px;font-weight:400}.check input{width:20px;min-height:20px;accent-color:var(--green)}.options-line{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}.options-line label{font-size:12px}.planner-label{display:flex;gap:8px;align-items:center}.planner-label select{font-size:12px;min-height:36px;padding:6px;width:auto}.small{font-size:12px;color:var(--muted)}.review-card{background:#f2f6e9;border-radius:12px;padding:17px;margin:14px 0}.review-card p{margin:6px 0}.success-mark{display:grid;place-items:center;width:56px;height:56px;background:#e4efcc;color:var(--green);border-radius:100%;font-size:28px;margin-bottom:18px}.receipt{border-top:1px solid var(--border);padding-top:15px;font-size:14px}footer{font-size:12px;color:var(--muted);padding-bottom:40px}details{margin-top:12px}summary{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #a15d00;outline-offset:4px}.skip{position:absolute;left:-10000px}.skip:focus{left:16px;top:16px;background:#fff;z-index:10}.large{font-size:22px}.large h2{font-size:32px}.large .small,.large .quiet,.large label,.large .option small,.large .summary-item .label{font-size:17px}[hidden]{display:none!important}@media(max-width:800px){header,main,footer{padding:20px}.header-actions{gap:3px;flex-wrap:wrap;justify-content:flex-end}.badge{display:none}.layout{grid-template-columns:1fr}.summary{position:static}.card{padding:23px}.intro{padding-top:14px}.row button{flex-grow:1}.row .primary{margin-left:0}.options-line{display:block}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#title">Skip to booking</a>
+<header><a class="brand" href="connected.html" aria-label="EasyLayer home"><span class="brand-icon" aria-hidden="true">e</span>EasyLayer<span class="brand-dot">.</span></a><div class="header-actions"><span id="mode" class="badge">Simulated Alexa+ experience</span><button id="language" class="quiet">한국어</button><button id="textsize" class="quiet" aria-label="Increase text size" aria-pressed="false">A＋</button></div></header>
+<main>
+  <div class="intro"><p class="eyebrow" id="eyebrow">A LITTLE GUIDANCE. A LOT MORE INDEPENDENCE.</p><h1 id="headline">Let’s make it easy.</h1><p id="subtitle">Say what you need. See your choices. Stay in control.</p></div>
+  <section class="notice" aria-label="Simulation controls"><strong>INTERACTION SIMULATION — no real booking or AI call</strong><p class="small">Use fictional contacts. These controls intentionally simulate failures for review.</p><div class="row"><button id="fixture-conflict">Simulate 10:00 taken</button><button id="fixture-lost">Simulate lost response</button></div><p id="fixture-status" class="small" aria-live="polite"></p></section><p id="connection" class="connection"></p>
+  <div class="layout">
+    <section class="workspace card" aria-labelledby="title">
+      <div class="step-row"><span id="progress"></span><span class="live-dot" id="source-state"></span></div>
+      <h2 id="title" tabindex="-1"></h2>
+      <p id="assistant-line" class="assistant-line"></p>
+      <div id="status" role="status" aria-live="polite" class="notice" hidden></div>
+      <div id="content"></div>
+      <section id="conversation" class="conversation" aria-label="Conversation" hidden>
+        <div class="conversation-heading"><h3 id="talk-title">Or tell me what to change</h3><button id="readback" class="quiet" data-action="read">Read aloud</button></div>
+        <form id="request-form"><label for="request" id="request-label">Your request</label><textarea id="request" rows="2" maxlength="1000" placeholder="Thursday morning instead"></textarea><div class="row"><button type="button" data-action="speak" id="speak">Speak</button><button type="button" data-action="stop" id="stop" hidden>Stop</button><button type="submit" class="primary" id="send">Send request <span aria-hidden="true">↗</span></button></div></form>
+        <div class="options-line"><label class="check"><input type="checkbox" id="voice-output"><span id="voice-label">Speak guidance</span></label><label class="planner-label"><span id="planner-label">Understanding</span><select id="planner-mode"><option value="bedrock">Amazon Bedrock</option><option value="basic">Basic commands · no AI</option></select></label></div>
+        <p id="command-help" class="small"></p><p id="planner-status" class="small" aria-live="polite"></p>
+      </section>
+    </section>
+    <aside class="summary card" aria-labelledby="summary-title"><p class="eyebrow" id="summary-eyebrow">ALWAYS HERE TO REVIEW</p><h2 id="summary-title">Your choices</h2><div id="selection"></div><div class="summary-footer"><span aria-hidden="true">✓</span><p id="assurance">You decide. We check the details.</p></div><a href="/index.php/booking" target="_blank" rel="noopener noreferrer" id="original">Open original booking site ↗</a></aside>
+  </div>
+</main>
+<footer><p id="foot"></p><details><summary id="about-label">About this prototype</summary><p id="technical"></p></details></footer>
+<script>
+/* Easy!Appointments 1.6.0 native HTTP adapter. No evaluated source scripts. */
+(function(root){
+'use strict';
+function variables(html){const m=/const vars\s*=\s*/.exec(html);if(!m)throw Error('Source contract unavailable');const start=m.index+m[0].length;let depth=0,quoted=false,escape=false;for(let i=start;i<html.length;i++){const c=html[i];if(quoted){if(escape)escape=false;else if(c==='\\')escape=true;else if(c==='"')quoted=false;}else{if(c==='"')quoted=true;else if(c==='{'||c==='[')depth++;else if(c==='}'||c===']'){if(--depth===0)return JSON.parse(html.slice(start,i+1));}}}throw Error('Incomplete source data');}
+const fields={'first-name':'first_name','last-name':'last_name','email':'email','phone-number':'phone_number','address':'address','city':'city','zip-code':'zip_code','notes':'notes'};
+function snapshot(html){const v=variables(html),doc=new DOMParser().parseFromString(html,'text/html');if(!Array.isArray(v.available_services)||!Array.isArray(v.available_providers))throw Error('Source contract unavailable');const inputs=Object.entries(fields).flatMap(([id,key])=>{const n=doc.getElementById(id);return n?[{key,id,required:n.required||n.classList.contains('required'),maxLength:n.maxLength>0?n.maxLength:500}]:[];});
+ const known=new Set(Object.keys(fields));
+ const customRequired=[...doc.querySelectorAll('#wizard-frame-3 input.required,#wizard-frame-3 select.required,#wizard-frame-3 textarea.required,#wizard-frame-3 [required]')].some(n=>!known.has(n.id));
+ const unsupported=customRequired||!!doc.querySelector('#captcha-text,#altcha-widget,#accept-to-terms-and-conditions,#accept-to-privacy-policy');
+ return {services:v.available_services.map(s=>({...s,id:String(s.id),price:Number(s.price),duration:Number(s.duration)})),providers:v.available_providers,inputs,unsupported,timezone:v.default_timezone||'UTC'};}
+class Source{
+ constructor(base='/index.php/booking',fetcher=globalThis.fetch,cookie=()=>document.cookie){this.base=base;this.fetcher=fetcher;this.cookie=cookie;this.csrf=null;}
+ async read(path='',data=null){let body;if(data!==null){const token=/(?:^|;\s*)csrf_cookie=([^;]+)/.exec(this.cookie());const csrf=this.csrf||(token?decodeURIComponent(token[1]):null);if(!csrf)throw Error('Source session unavailable');body=new URLSearchParams({...data,csrf_token:csrf});}const r=await this.fetcher(this.base+path,{method:body?'POST':'GET',body,credentials:'same-origin',cache:'no-store',signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('Source request failed');const text=await r.text();if(data===null){try{const v=variables(text);this.csrf=typeof v.csrf_token==='string'?v.csrf_token:null;}catch{this.csrf=null;}}return text;}
+ async load(){return snapshot(await this.read());}
+ async hours(service,provider,date){const data=JSON.parse(await this.read('/get_available_hours',{service_id:service.id,provider_id:provider.id,selected_date:date,manage_mode:'false'}));if(!Array.isArray(data)||!data.every(h=>/^([01]\d|2[0-3]):[0-5]\d$/.test(h)))throw Error('Unsupported availability response');return data;}
+ async register(service,provider,date,hour,contact){const start=date+' '+hour+':00';const d=new Date(date+'T'+hour+':00Z');d.setUTCMinutes(d.getUTCMinutes()+service.duration);const end=d.toISOString().slice(0,19).replace('T',' ');const data={'post_data[manage_mode]':'false','post_data[appointment][id_services]':service.id,'post_data[appointment][id_users_provider]':provider.id,'post_data[appointment][start_datetime]':start,'post_data[appointment][end_datetime]':end};for(const [k,v]of Object.entries(contact))if(Object.values(fields).includes(k))data[`post_data[customer][${k}]`]=v;const response=JSON.parse(await this.read('/register',data));if(!response.appointment_id||!response.appointment_hash)throw Error('Booking result is unknown');return {id:String(response.appointment_id),hash:response.appointment_hash,start};}
+ async verify(result,service,provider){const v=variables(await this.read('/reschedule/'+encodeURIComponent(result.hash)));const a=v.appointment_data;return !!a&&String(a.id)===result.id&&String(a.id_services)===service.id&&String(a.id_users_provider)===String(provider.id)&&a.start_datetime===result.start;}
+}
+const api={variables,Source,snapshot};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.EasySource=api;
+})(globalThis);
+
+</script><script>
+/* Shared task state for text, touch and voice. Model output never submits. */
+(function (root) {
+  'use strict';
+  const copy = value => JSON.parse(JSON.stringify(value));
+  const validDate = value => /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value+'T00:00:00Z')) && new Date(value+'T00:00:00Z').toISOString().slice(0,10) === value;
+  function todayIn(timezone='UTC', now=new Date()) {
+    const parts = new Intl.DateTimeFormat('en-CA', {timeZone:timezone,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now);
+    return ['year','month','day'].map(k=>parts.find(p=>p.type===k).value).join('-');
+  }
+  function filterHours(hours, period) {
+    return hours.filter(h => period==='any' || (period==='morning' && h<'12:00') || (period==='afternoon' && h>='12:00' && h<'18:00') || (period==='evening' && h>='18:00'));
+  }
+  class BookingSession {
+    constructor(source, storage=null, clock=()=>new Date()) {
+      this.source=source; this.storage=storage; this.clock=clock; this.key='easylayer.pending.v2.'+(source.simulation?'simulation':'connected');
+      this.data=null; this.service=null; this.provider=null; this.date=''; this.hour=''; this.period='any';
+      this.contact={}; this.choices=[]; this.visibleChoices=[]; this.phase='start'; this.revision=0;
+      this.busy=false; this.result=null; this.message=''; this.storageFailed=false;
+      try {
+        const saved=JSON.parse(storage?.getItem(this.key)||'null');
+        if(saved){ Object.assign(this,{service:saved.service,provider:saved.provider,date:saved.date,hour:saved.hour,result:saved.result||null}); this.phase='unknown'; this.message='restored'; }
+      } catch { this.phase='unknown'; this.message='storage'; this.storageFailed=true; }
+    }
+    get locked(){ return this.busy || ['unknown','done'].includes(this.phase); }
+    get timezone(){ return this.provider?.timezone || this.data?.timezone || 'UTC'; }
+    today(){ return todayIn(this.timezone,this.clock()); }
+    changed(){ this.revision++; this.result=null; }
+    availableProviders(id=this.service?.id){ return (this.data?.providers||[]).filter(p=>p.services.map(String).includes(String(id))); }
+    async run(fn){ if(this.busy)return false; this.busy=true; try{return await fn();}finally{this.busy=false;} }
+    async connect(){
+      if(this.locked)return;
+      return this.run(async()=>{
+        const data=await this.source.load();
+        if(data.unsupported)throw Error('unsupported');
+        if(data.services.some(s=>!Number.isFinite(s.price)||!Number.isFinite(s.duration)||s.duration<=0))throw Error('catalog');
+        this.data=data; this.phase='service'; this.message=data.services.length?'welcome':'empty'; this.changed();
+      });
+    }
+    selectService(id){
+      const service=this.data?.services.find(s=>s.id===String(id));
+      if(this.locked||!service)return false;
+      this.service=service; this.provider=null; this.hour=''; this.date=''; this.choices=[]; this.visibleChoices=[];
+      const providers=this.availableProviders();
+      if(providers.length===1)this.provider=providers[0];
+      this.phase=this.provider?'date':'provider'; this.changed(); this.message=''; return true;
+    }
+    selectProvider(id){
+      const p=this.availableProviders().find(p=>String(p.id)===String(id));
+      if(this.locked||!p)return false;
+      this.provider=p; this.hour=''; this.date=''; this.choices=[]; this.visibleChoices=[]; this.phase='date'; this.changed(); return true;
+    }
+    async fetchHours(){
+      this.choices=filterHours(await this.source.hours(this.service,this.provider,this.date),this.period);
+      this.visibleChoices=this.choices.slice(0,2); this.phase=this.choices.length?'time':'date';
+      this.message=this.choices.length?'choose-time':'no-times';
+    }
+    async chooseDate(date,period=this.period){
+      if(this.locked||!this.service||!this.provider)return false;
+      if(!validDate(date)||date<this.today())throw Error('date');
+      if(!['any','morning','afternoon','evening'].includes(period))throw Error('period');
+      this.date=date; this.period=period; this.hour=''; this.choices=[]; this.visibleChoices=[]; this.phase='date'; this.changed();
+      return this.run(()=>this.fetchHours());
+    }
+    chooseHour(hour){
+      if(this.locked||!this.choices.includes(hour))return false;
+      this.hour=hour; this.phase=this.contactValid()?'review':'contact'; this.changed(); this.message=''; return true;
+    }
+    edit(kind){
+      if(this.locked)return false;
+      this.changed(); this.message='';
+      if(kind==='service')this.phase='service';
+      else if(kind==='date'){this.hour='';this.phase=this.provider?'date':'provider';}
+      else if(kind==='contact'&&this.hour)this.phase='contact';
+      return true;
+    }
+    setContact(values){
+      if(this.locked)return false;
+      const allowed=new Set(this.data.inputs.map(f=>f.key));
+      const next=Object.fromEntries(Object.entries(values).filter(([k])=>allowed.has(k)).map(([k,v])=>[k,String(v)]));
+      if(JSON.stringify(next)!==JSON.stringify(this.contact)){this.contact=next;this.changed();}
+      return true;
+    }
+    contactValid(){
+      return !!this.data && this.data.inputs.every(f=>{
+        const value=(this.contact[f.key]||'').trim();
+        return (!f.required||!!value) && value.length<=f.maxLength && (f.key!=='email'||!value||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
+      });
+    }
+    review(){
+      if(this.locked||!this.hour||!this.contactValid())return false;
+      this.phase='review'; this.message='review'; this.changed(); return true;
+    }
+    context(){
+      // Deliberately omit contact fields and prior free-form utterances.
+      return {phase:this.phase,today:this.today(),timezone:this.timezone,service_id:this.service?.id||null,
+        provider_id:this.provider?String(this.provider.id):null,date:this.date||null,period:this.period,
+        hour:this.hour||null,visible_choices:this.phase==='time'?this.visibleChoices:[],revision:this.revision};
+    }
+    async applyPlan(plan, expectedRevision){
+      if(this.locked||expectedRevision!==this.revision)return false;
+      if(plan.action==='clarify'){this.message='clarify'; return false;}
+      if(plan.action==='read_summary'){this.message='summary';return true;}
+      if(plan.action==='review')return this.review();
+      if(plan.action!=='update')throw Error('plan');
+      const allowed=new Set(['action','service_id','provider_id','date','period','time','choice_index','provider','latency_ms','model','usage']);
+      if(Object.keys(plan).some(k=>!allowed.has(k)))throw Error('plan');
+      const service=plan.service_id?this.data.services.find(s=>s.id===String(plan.service_id)):this.service;
+      if(plan.service_id&&!service)throw Error('plan');
+      const eligible=service?this.availableProviders(service.id):[];
+      if(plan.provider_id&&!eligible.some(p=>String(p.id)===String(plan.provider_id)))throw Error('plan');
+      if(plan.date&&(!validDate(plan.date)||plan.date<this.today()))throw Error('date');
+      if(plan.period&&!['any','morning','afternoon','evening'].includes(plan.period))throw Error('period');
+      if(plan.time&&!/^([01]\d|2[0-3]):[0-5]\d$/.test(plan.time))throw Error('plan');
+      if(plan.choice_index!==undefined && (this.phase!=='time'||!Number.isInteger(plan.choice_index)||plan.choice_index<1||plan.choice_index>this.visibleChoices.length||plan.date||plan.period||plan.service_id||plan.provider_id||plan.time))throw Error('choice');
+      const selectedByIndex=plan.choice_index===undefined?null:this.visibleChoices[plan.choice_index-1];
+      const oldDate=this.date, oldPeriod=this.period;
+      if(plan.service_id&&this.service?.id!==String(plan.service_id))this.selectService(plan.service_id);
+      if(plan.provider_id&&String(this.provider?.id)!==String(plan.provider_id))this.selectProvider(plan.provider_id);
+      if(plan.period)this.period=plan.period;
+      const date=plan.date||this.date||oldDate;
+      if(date&&this.provider&&(plan.date||plan.period||plan.service_id||plan.provider_id))await this.chooseDate(date,plan.period||oldPeriod);
+      if(selectedByIndex)return this.chooseHour(selectedByIndex);
+      if(plan.time){if(!this.choices.includes(plan.time)){this.message='time-unavailable';return false;}return this.chooseHour(plan.time);}
+      return true;
+    }
+    persist(){
+      if(!this.storage)throw Error('storage');
+      this.storage.setItem(this.key,JSON.stringify({service:this.service,provider:this.provider,date:this.date,hour:this.hour,result:this.result}));
+    }
+    async confirm(approvedRevision){
+      if(this.locked||this.phase!=='review'||approvedRevision!==this.revision||!this.contactValid()||!this.hour)return false;
+      return this.run(async()=>{
+        const latest=await this.source.load();
+        if(latest.unsupported)throw Error('unsupported');
+        const current=latest.services.find(s=>s.id===this.service.id);
+        const provider=latest.providers.find(p=>String(p.id)===String(this.provider.id)&&p.services.map(String).includes(this.service.id));
+        const serviceChanged=!current||['name','price','currency','duration'].some(k=>current[k]!==this.service[k]);
+        const providerChanged=!provider||['timezone','first_name','last_name'].some(k=>provider[k]!==this.provider[k]);
+        if(serviceChanged||providerChanged||JSON.stringify(latest.inputs)!==JSON.stringify(this.data.inputs)){
+          this.data=latest;this.service=current||null;this.provider=provider||null;this.hour='';this.choices=[];this.visibleChoices=[];this.changed();
+          this.phase=!current?'service':!provider?'provider':'date';this.message='changed';return false;
+        }
+        if(approvedRevision!==this.revision)return false;
+        const hours=await this.source.hours(this.service,this.provider,this.date);
+        if(!hours.includes(this.hour)){
+          this.hour='';this.changed();this.choices=filterHours(hours,this.period);this.visibleChoices=this.choices.slice(0,2);
+          this.phase=this.choices.length?'time':'date';this.message='conflict';return false;
+        }
+        // Write the tab-local pending marker before the only mutating request.
+        this.persist();this.phase='unknown';this.message='unknown';
+        try{
+          this.result=await this.source.register(this.service,this.provider,this.date,this.hour,this.contact);
+          this.persist();
+          if(await this.source.verify(this.result,this.service,this.provider)){
+            this.phase='done';this.message='verified';return true;
+          }
+        }catch{ /* Unknown after POST: never retry blindly, even after reload. */ }
+        return false;
+      });
+    }
+    async verify(){
+      if(this.busy||this.phase!=='unknown'||!this.result)return false;
+      return this.run(async()=>{
+        if(await this.source.verify(this.result,this.service,this.provider)){this.phase='done';this.message='verified';return true;}
+        this.message='unknown';return false;
+      });
+    }
+  }
+  const api={BookingSession,validDate,todayIn,filterHours};
+  if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.EasyBooking=api;
+})(globalThis);
+
+</script><script>
+/* Explicit, limited, offline commands; never represented as AI. */
+(function(root){
+  'use strict';
+  function parse(text,context,catalog){
+    let s=text.trim().toLowerCase().replace(/[.!?。！？]+$/,'');
+    if(/^(read (it|that|summary)( again)?|repeat|다시 읽어줘|다시 읽어 주세요|선택 내용 읽어줘)$/.test(s))return {action:'read_summary'};
+    if(/^(review( booking)?|확인|예약 내용 확인)$/.test(s))return {action:'review'};
+    const ordinal=/^(?:the )?(first|second|third|1|2|3)(?: one| option| time)?(?: please)?$/.exec(s)||/^(첫 번째|첫번째|두 번째|두번째|세 번째|세번째|1번|2번|3번)(?:로|로 해줘|로 할게)?$/.exec(s);
+    if(ordinal){const i={'first':1,'second':2,'third':3,'첫 번째':1,'첫번째':1,'두 번째':2,'두번째':2,'세 번째':3,'세번째':3,'1번':1,'2번':2,'3번':3}[ordinal[1]]||Number(ordinal[1]);return {action:'update',choice_index:i};}
+    // Exact source label is also a useful deterministic service command.
+    const service=catalog.find(x=>x.name.toLowerCase()===s);
+    if(service)return {action:'update',service_id:service.id};
+    const time=/^([01]\d|2[0-3]):([0-5]\d)$/.exec(s);
+    if(time)return {action:'update',time:s};
+    let period;
+    if(/\b(morning|afternoon|evening|any time)\b|오전|오후|저녁|아무 시간/.test(s)){
+      period=/morning|오전/.test(s)?'morning':/afternoon|오후/.test(s)?'afternoon':/evening|저녁/.test(s)?'evening':'any';
+    }
+    const names=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+    const korean=['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
+    const weekdays=names.map((n,i)=>new RegExp('\\b'+n+'\\b').test(s)||s.includes(korean[i])?i:-1).filter(i=>i>=0);
+    const dates=s.match(/\b\d{4}-\d{2}-\d{2}\b/g)||[];
+    // Refuse compound, negated, or unsupported requests instead of partially applying them.
+    if(/\b(not|except|before|after|or|cancel)\b|말고|제외|취소|이전|이후/.test(s)||weekdays.length>1||dates.length>1)return null;
+    let remainder=s;
+    for(const n of [...names,...korean])remainder=remainder.replaceAll(n,' ');
+    remainder=remainder.replace(/\d{4}-\d{2}-\d{2}|\b(next week|this week|next|this|today|tomorrow|morning|afternoon|evening|any time|change|move|to|on|in|the|instead|please)\b|다음 주|이번 주|내일|오늘|오전|오후|저녁|아무 시간|으로|로|바꿔줘|해줘|할게|주세요/g,' ').trim();
+    if(remainder)return null;
+    let date=dates[0];
+    const base=new Date(context.today+'T00:00:00Z');
+    if(!date&&weekdays.length){
+      const target=weekdays[0];
+      if(/next week|다음 주/.test(s)){const monday=new Date(base);monday.setUTCDate(base.getUTCDate()-((base.getUTCDay()+6)%7)+7);monday.setUTCDate(monday.getUTCDate()+((target+6)%7));date=monday.toISOString().slice(0,10);}
+      else if(/this week|이번 주/.test(s)){const monday=new Date(base);monday.setUTCDate(base.getUTCDate()-((base.getUTCDay()+6)%7));monday.setUTCDate(monday.getUTCDate()+((target+6)%7));date=monday.toISOString().slice(0,10);}
+      else if(/\bnext\b/.test(s))return null; // 'next Tuesday' is intentionally left to clarification/AI.
+      else{base.setUTCDate(base.getUTCDate()+(target-base.getUTCDay()+7)%7);date=base.toISOString().slice(0,10);}
+    } else if(!date&&/tomorrow|내일/.test(s)){base.setUTCDate(base.getUTCDate()+1);date=base.toISOString().slice(0,10);}
+    else if(!date&&/today|오늘/.test(s))date=context.today;
+    if(!date&&!period)return null;
+    return {action:'update',...(date?{date}:{}),...(period?{period}:{})};
+  }
+  const api={parse};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.EasyCommands=api;
+})(globalThis);
+
+</script><script>
+/* Browser-only interaction fixture. Never used by connected.html. */
+(function(){
+  const services=[{id:'1',name:'Photography Introduction',duration:30,price:10,currency:'USD'},{id:'2',name:'Photo Editing',duration:45,price:15,currency:'USD'},{id:'3',name:'Smartphone Basics',duration:30,price:0,currency:'USD'}];
+  const providers=[{id:7,first_name:'Alex',last_name:'Morgan',timezone:'America/Los_Angeles',services:['1','2','3']}];
+  class FixtureSource{
+    constructor(){this.simulation=true;this.taken=new Set();this.lost=false;
+      document.getElementById('fixture-conflict').addEventListener('click',()=>{this.taken.add('10:00');document.getElementById('fixture-status').textContent='Simulation: 10:00 is now unavailable. Other times remain available.';});
+      document.getElementById('fixture-lost').addEventListener('click',()=>{this.lost=true;document.getElementById('fixture-status').textContent='Simulation: the next booking response will be lost.';});
+    }
+    async load(){return JSON.parse(JSON.stringify({services,providers,inputs:[{key:'first_name',required:true,maxLength:100},{key:'last_name',required:true,maxLength:120},{key:'email',required:true,maxLength:120},{key:'phone_number',required:false,maxLength:60}],unsupported:false,timezone:'America/Los_Angeles'}));}
+    async hours(){return ['09:00','10:00','11:00','14:00','15:00','18:00'].filter(h=>!this.taken.has(h));}
+    async register(service,provider,date,hour){
+      if(this.taken.has(hour))throw Error('Simulated unavailable');this.taken.add(hour);
+      const result={id:'DEMO-'+Date.now(),hash:'simulation-only',start:date+' '+hour+':00'};
+      const record={...result,service:service.id,provider:provider.id};
+      sessionStorage.setItem('easylayer.simulation.record',JSON.stringify(record));
+      if(this.lost){this.lost=false;throw Error('Simulated lost response');}return result;
+    }
+    async verify(result,service,provider){const r=JSON.parse(sessionStorage.getItem('easylayer.simulation.record')||'null');return !!r&&r.id===result.id&&r.start===result.start&&r.service===service.id&&String(r.provider)===String(provider.id);}
+  }
+  EasySource.Source=FixtureSource;
+})();
+
+'use strict';
+const $=id=>document.getElementById(id);
+let storage;try{storage=window.sessionStorage;}catch{storage={getItem(){throw Error('storage');}};}
+const booking=new EasyBooking.BookingSession(new EasySource.Source(),storage);
+const simulated=booking.source.simulation===true;
+let lang='en',speech=null,voiceEnabled=false,requestBusy=false,spoken='',customQuestion='',approvalRevision=null,requestRevision=null;
+const words={
+ unknown_title:['Let’s check before trying again.','다시 예약하기 전에 확인할게요.'],
+ start:['Choose something you’d love to learn.','배우고 싶은 것을 골라볼까요?'],service:['What would you like to learn?','무엇을 배우고 싶으세요?'],provider:['Who would you like to learn with?','어떤 선생님과 함께할까요?'],date:['When works for you?','언제가 편하세요?'],time:['Here are your options.','가능한 시간을 골라주세요.'],contact:['A few details, then you’re ready.','연락처를 입력하면 준비가 끝나요.'],review:['Does everything look right?','예약 내용을 확인해 주세요.'],unknown:['Let’s check before trying again.','다시 예약하기 전에 확인할게요.'],done:['You’re all booked.','예약이 확인됐어요.'],
+ welcome:['Tell me what you need, or choose a class below.','원하는 수업을 말하거나 아래에서 선택해 주세요.'],empty:['No classes are available on the original site.','원본 사이트에 가능한 수업이 없어요.'],
+ 'choose-time':['Choose a time below, or say “the second one”.','시간을 누르거나 “두 번째로”라고 말해 주세요.'], 'no-times':['No times match. Try another day or a different time of day.','조건에 맞는 시간이 없어요. 날짜나 시간대를 바꿔주세요.'],
+ conflict:['That time was just taken. Your details are saved. Choose another time, then review again.','방금 해당 시간이 마감됐어요. 연락처는 유지했어요. 다른 시간을 고른 뒤 다시 확인해 주세요.'],
+ changed:['The original details changed. Please choose a time and review the updated information.','원본 정보가 바뀌었어요. 시간을 다시 고르고 변경된 내용을 확인해 주세요.'],
+ unknown:['The result is not confirmed. Do not submit again. Check the original booking site.','결과를 확인하지 못했어요. 다시 제출하지 말고 원본 사이트에서 확인해 주세요.'],
+ restored:['A previous submission was found in this tab. Check its result before doing anything else.','이 탭에 이전 제출 기록이 있어요. 먼저 결과를 확인해 주세요.'],
+ verified:['We checked your booking against the original record.','원본 예약 기록과 일치하는 것을 확인했어요.'],
+ storage:['This browser cannot preserve a pending booking. Use the original site to continue.','이 브라우저에 제출 상태를 보관할 수 없어요. 원본 사이트에서 진행해 주세요.'],
+ unsupported:['The original site requires an additional consent or verification step. Continue there.','원본 사이트에서 추가 동의나 인증이 필요해요. 원본에서 진행해 주세요.'],
+ catalog:['The original class information could not be read reliably. Open the original site.','원본 수업 정보를 확인하지 못했어요. 원본 사이트를 열어주세요.'],
+ network:['We could not reach the booking site. Your choices are kept. Try again or open the original site.','예약 사이트에 연결하지 못했어요. 선택은 유지했어요. 다시 시도하거나 원본을 열어주세요.'],
+ date_error:['Please choose a valid date, today or later.','오늘 이후의 올바른 날짜를 골라주세요.'],
+ plan:['I could not safely apply that request. Please rephrase or use the buttons.','요청을 확실히 적용하지 못했어요. 다시 말하거나 버튼을 사용해 주세요.'],
+ choice:['Please select one of the times currently shown.','지금 화면에 표시된 시간 중에서 골라주세요.'],
+ 'time-unavailable':['That time is not in the available options. Please choose a time shown below.','해당 시간은 현재 예약할 수 없어요. 표시된 시간 중에서 골라주세요.'],
+ clarify:['Which class or time did you mean? You can also use the buttons.','어떤 수업이나 시간을 원하세요? 버튼으로 선택해도 돼요.'],
+ privacy:['Contact form fields stay out of the AI request. Anything you type or say in the request box goes to the selected service. Enter private details only in the contact form.','연락처 입력란의 값은 AI에 보내지 않아요. 요청창에 입력하거나 말한 내용은 선택한 서비스로 전달되므로, 개인정보는 연락처 입력란에만 적어주세요.'],
+ first_name:['First name','이름'],last_name:['Last name','성'],email:['Email','이메일'],phone_number:['Phone number','전화번호'],address:['Address','주소'],city:['City','도시'],zip_code:['ZIP code','우편번호'],notes:['Notes','요청 사항']
+};
+const tr=(en,ko)=>lang==='ko'?ko:en;
+const w=key=>words[key]?.[lang==='ko'?1:0]||key;
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const button=(label,action,cls='')=>`<button type="button" data-action="${esc(action)}" class="${cls}">${esc(label)}</button>`;
+const money=s=>`${s.price} ${s.currency||tr('(currency unspecified)','(통화 미표시)')}`;
+const providerName=()=>booking.provider?[booking.provider.first_name,booking.provider.last_name].join(' '):'';
+const unavailable=()=>booking.locked||requestBusy;
+function summaryText(){return [booking.service?.name,booking.service?money(booking.service):'',providerName(),booking.date,booking.hour,booking.timezone].filter(Boolean).join(', ');}
+function speak(text,force=false){if((!voiceEnabled&&!force)||!('speechSynthesis'in window)||!text)return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang==='ko'?'ko-KR':'en-US';u.rate=.92;window.speechSynthesis.speak(u);}
+function status(text){$('status').textContent=text;$('status').hidden=!text;}
+function contactValues(){return Object.fromEntries([...document.querySelectorAll('[data-field]')].map(n=>[n.dataset.field,n.value]));}
+function render(){
+ const phase=booking.phase, busy=booking.busy||requestBusy;
+ document.documentElement.lang=lang;$('language').textContent=lang==='en'?'한국어':'English';$('language').disabled=busy;
+ $('mode').textContent=tr('Simulated Alexa+ experience','Alexa+ 경험 시뮬레이션');
+ $('eyebrow').textContent=tr('A LITTLE GUIDANCE. A LOT MORE INDEPENDENCE.','작은 안내로, 스스로 할 수 있는 일이 더 많아지도록.');
+ $('headline').textContent=tr('Let’s make it easy.','쉽게, 함께 해볼까요.');$('subtitle').textContent=tr('Say what you need. See your choices. Stay in control.','원하는 일을 말하고, 선택을 확인하고, 직접 결정하세요.');
+ $('connection').textContent=simulated?tr('INTERACTION SIMULATION · No real booking. No Bedrock call.','동작 시뮬레이션 · 실제 예약과 Bedrock 호출이 없습니다.'):tr('Connected mode · bookings are written to your self-hosted test site. Use fictional contacts.','연결 모드 · 직접 운영하는 테스트 사이트에 예약이 저장됩니다. 가상 연락처를 사용하세요.');
+ $('summary-title').textContent=tr('Your choices','선택한 내용');$('summary-eyebrow').textContent=tr('ALWAYS HERE TO REVIEW','언제든 다시 확인하세요');$('assurance').textContent=tr('You decide. We check the details.','결정은 직접, 확인은 함께.');$('original').textContent=simulated?tr('Simulation only · no original site','시뮬레이션 · 원본 사이트 없음'):tr('Open original booking site ↗','원본 예약 사이트 열기 ↗');if(simulated)$('original').removeAttribute('href');
+ $('foot').textContent=w('privacy');$('about-label').textContent=tr('About this prototype','프로토타입 안내');$('technical').textContent=tr('A simulated Alexa+ web experience, not an Alexa runtime integration. Easy!Appointments 1.6.0 supplies the booking data. Browser speech support varies. The basic-command mode uses rules, not AI. Closing this tab removes its pending-state guard; it is not server-wide idempotency.','실제 Alexa 런타임에 연결된 서비스가 아닌 Alexa+ 웹 경험 시뮬레이션입니다. Easy!Appointments 1.6.0에서 예약 정보를 가져옵니다. 브라우저마다 음성 지원이 다르며 기본 명령 모드는 AI가 아닌 규칙으로 작동합니다. 이 탭을 닫으면 제출 상태 보호 기록이 사라지며 서버 전체의 중복 방지 기능은 아닙니다.');
+ const steps={start:1,service:1,provider:2,date:2,time:2,contact:3,review:4,unknown:4,done:4};
+ $('progress').textContent=tr(`STEP ${steps[phase]} OF 4`,`4단계 중 ${steps[phase]}단계`);$('source-state').textContent=booking.data?(simulated?tr('Simulated source','가상 원본'):tr('Source connected','원본 연결됨')):tr('Source not connected','원본 연결 전');
+ $('title').textContent=simulated&&phase==='done'?tr('Your demo is complete.','예약 시뮬레이션을 완료했어요.'):w(phase==='unknown'?'unknown_title':phase);$('assistant-line').textContent=simulated&&phase==='done'?tr('A fictional record was checked in this browser. No real reservation was made.','이 브라우저의 가상 기록을 확인했어요. 실제 예약은 생성하지 않았어요.'):busy?tr('One moment, checking…','잠시만요, 확인하고 있어요…'):customQuestion||(['welcome','choose-time','no-times','clarify','verified'].includes(booking.message)?w(booking.message):phase==='review'?tr('Review the class, time, price and contact details below.','수업·시간·금액·연락처를 확인해 주세요.'):phase==='date'?tr('All times follow the teacher’s timezone.','모든 시간은 선생님의 시간대를 기준으로 해요.'):phase==='contact'?tr('These details are sent only to the booking site.','이 정보는 예약 사이트로만 전달돼요.'):phase==='start'?tr('Connect to see the classes available at your centre.','센터의 예약 가능한 수업을 불러올게요.'):phase==='service'?w('welcome'):'');
+ const messages=['conflict','changed','unknown','restored','storage','time-unavailable'];status(messages.includes(booking.message)?w(booking.message):'');
+ let html='';
+ if(phase==='start')html=button(tr('Find a class','수업 찾아보기'),'connect','primary');
+ if(phase==='service')html=`<div class="options">${booking.data.services.map(s=>`<button class="option" data-action="service:${esc(s.id)}"><span><strong>${esc(s.name)}</strong><small>${esc(money(s))} · ${s.duration} ${tr('minutes','분')}</small></span><span class="arrow" aria-hidden="true">↗</span></button>`).join('')}</div>`;
+ if(phase==='provider')html=`<div class="options">${booking.availableProviders().map(p=>button([p.first_name,p.last_name].join(' '),'provider:'+p.id,'option')).join('')}</div>`;
+ if(phase==='date')html=`<label for="date">${tr('Date','날짜')}</label><input type="date" id="date" min="${booking.today()}" value="${esc(booking.date||booking.today())}"><label for="period">${tr('Time of day','시간대')}</label><select id="period">${[['any','Any time','전체'],['morning','Morning · before 12','오전 · 12시 이전'],['afternoon','Afternoon · 12–18','오후 · 12~18시'],['evening','Evening · after 18','저녁 · 18시 이후']].map(([v,en,ko])=>`<option value="${v}" ${booking.period===v?'selected':''}>${tr(en,ko)}</option>`).join('')}</select><div class="row">${button(tr('Find available times','가능한 시간 찾기'),'hours','primary')}</div>`;
+ if(phase==='time')html=`<p class="small">${esc(booking.date)} · ${esc(booking.timezone)}</p><div class="options">${booking.visibleChoices.map((h,i)=>`<button class="option" data-action="hour:${h}"><span><span class="number">${i+1}</span><strong>${h}</strong></span><span class="arrow" aria-hidden="true">↗</span></button>`).join('')}</div>${booking.visibleChoices.length<booking.choices.length?button(tr('Show all times','시간 모두 보기'),'expand','quiet'):''}`;
+ if(phase==='contact')html=`<form id="contact-form">${booking.data.inputs.map(f=>`<label for="field-${f.key}">${esc(w(f.key))} · ${tr(f.required?'Required':'Optional',f.required?'필수':'선택')}</label><input data-field="${f.key}" id="field-${f.key}" maxlength="${f.maxLength}" value="${esc(booking.contact[f.key]||'')}" ${f.required?'required':''} type="${f.key==='email'?'email':f.key==='phone_number'?'tel':'text'}" autocomplete="off">`).join('')}<div class="row"><button class="primary" type="submit">${tr('Review booking','예약 내용 확인')}</button></div></form>`;
+ if(phase==='review')html=`<div class="review-card"><p><strong>${esc(booking.service.name)}</strong></p><p>${esc(providerName())}</p><p>${esc(booking.date)} · ${esc(booking.hour)} · ${esc(booking.timezone)}</p><p>${esc(money(booking.service))} · ${booking.service.duration} ${tr('minutes','분')}</p></div><h3>${tr('Contact details to send','전송할 연락처')}</h3><div class="review-card">${booking.data.inputs.filter(f=>booking.contact[f.key]).map(f=>`<p><span class="small">${esc(w(f.key))}</span><br>${esc(booking.contact[f.key])}</p>`).join('')}</div><p class="small">${tr('Check cancellation terms on the original site before confirming. This adapter does not retrieve them.','확정 전에 원본 사이트의 취소 조건을 확인해 주세요. 이 연결 기능은 취소 조건을 가져오지 않습니다.')}</p><label class="check"><input id="approve" type="checkbox"><span>${tr('I reviewed the details above.','위 내용을 확인했어요.')}</span></label><div class="row">${button(tr('Confirm booking','예약 확정하기'),'submit','primary')}</div><p class="small">${tr('After checking the box, you may also say “confirm booking”.','확인란을 체크한 뒤 “예약 확정”이라고 말해도 돼요.')}</p>`;
+ if(phase==='unknown')html=`<p>${w('unknown')}</p>${booking.result?button(tr('Check existing booking','기존 예약 확인'),'verify','primary'):''}`;
+ if(phase==='done')html=`<div class="success-mark" aria-hidden="true">✓</div><div class="review-card"><p><strong>${esc(booking.service.name)}</strong></p><p>${esc(booking.date)} · ${esc(booking.hour)}</p><p>${esc(booking.timezone)} · ${esc(money(booking.service))}</p></div><p class="receipt">${simulated?tr('Simulated record ID','가상 기록 번호'):tr('Verified booking ID','확인된 예약 번호')}: <strong>${esc(booking.result.id)}</strong></p>`;
+ $('content').innerHTML=html;approvalRevision=null;
+ const summaryItem=(label,value,edit)=>`<div class="summary-item"><span class="label">${esc(label)}</span><strong>${esc(value)}</strong>${edit&&!unavailable()?button(tr('Change','수정'),edit,'quiet'):''}</div>`;
+ $('selection').innerHTML=booking.service?summaryItem(tr('CLASS','수업'),booking.service.name,'edit-service')+summaryItem(tr('TEACHER','선생님'),providerName()||tr('Not selected yet','아직 선택 전'),null)+summaryItem(tr('WHEN','일시'),[booking.date,booking.hour].filter(Boolean).join(' · ')||tr('Not selected yet','아직 선택 전'),'edit-date')+`<p class="small">${esc(booking.timezone)}</p>`+summaryItem(tr('PRICE','금액'),money(booking.service),null)+(booking.hour&&!['unknown','done'].includes(phase)?summaryItem(tr('CONTACT','연락처'),booking.contactValid()?tr('Details entered','입력됨'):tr('Details needed','입력 필요'),'edit-contact'):''):`<p class="empty">${tr('Your choices will appear here as we go.','선택한 내용이 여기에 차곡차곡 표시돼요.')}</p>`;
+ $('conversation').hidden=!booking.data||['unknown','done'].includes(phase);$('talk-title').textContent=tr('Or tell me what to change','말로 바꿔도 좋아요');$('readback').textContent=tr('Read aloud','읽어주기');$('request-label').textContent=tr('Your request','요청');$('request').placeholder=tr('Thursday morning instead','목요일 오전으로 바꿔줘');$('speak').textContent=tr('Speak','말하기');$('stop').textContent=tr('Stop','멈추기');$('send').textContent=tr('Send request ↗','요청 보내기 ↗');$('voice-label').textContent=tr('Speak guidance','안내 읽어주기');$('planner-label').textContent=tr('Understanding','요청 이해');$('planner-mode').options[1].textContent=tr('Basic commands · no AI','기본 명령 · AI 미사용');
+ $('command-help').textContent=tr('Basic commands: exact class name, “Tuesday morning”, “tomorrow”, “second”, “read summary”. Voice is transcribed for you to review before sending.','기본 명령: 정확한 수업 이름, “화요일 오전”, “내일”, “두 번째로”, “다시 읽어줘”. 음성은 글로 바뀌며 확인 후 요청을 보내세요.');
+ document.querySelectorAll('#content button,#content input,#content select,#selection button,#request-form button,#request,#planner-mode').forEach(n=>n.disabled=busy);
+ if(phase==='review'){const submit=document.querySelector('[data-action="submit"]');submit.disabled=true;$('approve').addEventListener('change',()=>{approvalRevision=$('approve').checked?booking.revision:null;submit.disabled=approvalRevision===null||busy;});}
+ const form=$('contact-form');if(form){form.addEventListener('input',()=>booking.setContact(contactValues()));form.addEventListener('submit',e=>{e.preventDefault();booking.setContact(contactValues());if(booking.review()){render();$('title').focus();}else status(tr('Please check the required fields.','필수 입력 항목을 확인해 주세요.'));});}
+ const line=$('assistant-line').textContent;if(!busy&&line&&line!==spoken){spoken=line;speak(line);}
+}
+async function act(fn){
+ customQuestion='';const prevPhase=booking.phase;
+ let promise;try{promise=fn();render();await promise;render();if(prevPhase!==booking.phase)$('title').focus();}
+ catch(e){render();status(w(e.message==='date'?'date_error':words[e.message]?e.message:'network'));}
+}
+async function sendRequest(){
+ if(unavailable())return;
+ const text=$('request').value.trim();if(!text)return;speech?.abort();
+ if(/^(confirm booking|예약 확정)[.!。]?$/i.test(text)){
+   if(booking.phase==='review'&&approvalRevision===booking.revision){const approved=approvalRevision;await act(()=>booking.confirm(approved));}
+   else status(tr('Review the booking and check the confirmation box first.','예약 내용을 확인하고 확인란을 먼저 체크해 주세요.'));
+   return;
+ }
+ const revision=booking.revision, mode=$('planner-mode').value;
+ if(requestRevision!==null&&requestRevision!==revision){status(tr('Your choices changed while you were speaking. Please record or type the request again.','말하는 동안 선택이 바뀌었어요. 요청을 다시 말하거나 입력해 주세요.'));return;}
+ requestBusy=true;render();let error='';
+ try{
+  let plan;
+  if(mode==='basic'){plan=EasyCommands.parse(text,booking.context(),booking.data.services);if(!plan)throw Error('basic');$('planner-status').textContent=tr('Basic commands · rules only, no AI call','기본 명령 · 규칙만 사용, AI 호출 없음');}
+  else{
+   const response=await fetch('intent.php',{method:'POST',headers:{'Content-Type':'application/json','X-EasyLayer':'1'},body:JSON.stringify({text,catalog:booking.data.services.map(s=>({id:s.id,name:s.name})),providers:booking.data.providers.map(p=>({id:String(p.id),name:[p.first_name,p.last_name].join(' '),services:p.services})),context:booking.context()}),signal:AbortSignal.timeout(30000)});
+   if(!response.ok)throw Error('ai');plan=await response.json();if(plan.provider!=='bedrock')throw Error('ai');
+   $('planner-status').textContent=tr(`Amazon Bedrock · ${plan.latency_ms} ms`,`Amazon Bedrock · ${plan.latency_ms}ms`);
+   if(plan.action==='select_service')plan={...plan,action:'update'};
+  }
+  requestBusy=false;
+  await booking.applyPlan(plan,revision);
+  if(plan.action==='clarify')customQuestion=plan.question||w('clarify');
+  if(plan.action==='read_summary')speak(summaryText(),true);
+  $('request').value='';requestRevision=null;
+ }catch(e){error=e.message==='ai'?tr('AI is unavailable. Your choices are unchanged. Use the buttons or switch to Basic commands.','AI에 연결하지 못했어요. 선택은 유지했어요. 버튼이나 기본 명령 모드를 사용해 주세요.'):e.message==='basic'?tr('That is outside Basic commands. Use an example below, the buttons, or Amazon Bedrock.','기본 명령 범위를 벗어났어요. 아래 예시나 버튼, Amazon Bedrock을 사용해 주세요.'):w(e.message==='date'?'date_error':words[e.message]?e.message:'plan');}
+ finally{requestBusy=false;render();if(error)status(error);}
+}
+$('request-form').addEventListener('submit',e=>{e.preventDefault();sendRequest();});$('request').addEventListener('input',()=>requestRevision=null);
+$('voice-output').addEventListener('change',()=>{voiceEnabled=$('voice-output').checked;if(voiceEnabled)speak($('assistant-line').textContent||summaryText());else window.speechSynthesis?.cancel();});
+$('planner-mode').addEventListener('change',()=>{$('planner-status').textContent='';});
+document.addEventListener('click',async e=>{
+ const b=e.target.closest('button');if(!b||b.disabled)return;
+ if(b.id==='language'){speech?.abort();window.speechSynthesis?.cancel();lang=lang==='en'?'ko':'en';render();return;}
+ if(b.id==='textsize'){document.body.classList.toggle('large');b.setAttribute('aria-pressed',String(document.body.classList.contains('large')));return;}
+ const a=b.dataset.action;if(!a)return;
+ if(a==='read'){speak(summaryText()||$('assistant-line').textContent,true);return;}
+ if(a==='stop'){speech?.stop();window.speechSynthesis?.cancel();return;}
+ if(unavailable()&&a!=='verify')return;
+ if(a==='speak'){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){status(tr('Speech is unavailable. Type your request or use the buttons.','음성을 사용할 수 없어요. 요청을 입력하거나 버튼을 사용해 주세요.'));return;}
+  window.speechSynthesis?.cancel();speech?.abort();const rev=booking.revision;const phase=booking.phase;speech=new SR();speech.lang=lang==='ko'?'ko-KR':'en-US';speech.interimResults=false;
+  speech.onresult=e=>{if(booking.revision!==rev||booking.phase!==phase){status(w('plan'));return;}$('request').value=e.results[0][0].transcript;requestRevision=rev;status(tr('Check the text, then send your request.','변환된 글을 확인한 뒤 요청을 보내주세요.'));};
+  speech.onerror=()=>status(tr('Microphone unavailable or speech not recognized. You can type or use the buttons.','마이크를 사용할 수 없거나 음성을 인식하지 못했어요. 입력이나 버튼으로 진행할 수 있어요.'));
+  speech.onend=()=>{$('stop').hidden=true;};try{speech.start();$('stop').hidden=false;status(tr('Listening…','듣고 있어요…'));}catch{status(w('plan'));}return;
+ }
+ if(a==='connect'){await act(()=>booking.connect());return;}
+ if(a.startsWith('service:')){await act(()=>booking.selectService(a.slice(8)));return;}
+ if(a.startsWith('provider:')){await act(()=>booking.selectProvider(a.slice(9)));return;}
+ if(a==='hours'){const date=$('date').value,period=$('period').value;await act(()=>booking.chooseDate(date,period));return;}
+ if(a.startsWith('hour:')){await act(()=>booking.chooseHour(a.slice(5)));return;}
+ if(a==='expand'){booking.visibleChoices=[...booking.choices];booking.revision++;render();return;}
+ if(a.startsWith('edit-')){await act(()=>booking.edit(a.slice(5)));return;}
+ if(a==='submit'){const approved=approvalRevision;if(approved!==null)await act(()=>booking.confirm(approved));return;}
+ if(a==='verify')await act(()=>booking.verify());
+});
+window.addEventListener('beforeunload',e=>{if(booking.busy){e.preventDefault();e.returnValue='';}});
+render();
+
+$("planner-mode").value="basic";$("planner-mode").options[0].disabled=true;$("original").removeAttribute("href");$("original").textContent="Simulation only · no original site";
+</script>
+</body></html>

@@ -1,0 +1,33 @@
+test_jwt_signature_audience_expiry_and_scope (test_auth_source.AuthTests.test_jwt_signature_audience_expiry_and_scope) ... ok
+test_local_mode_cannot_bind_publicly (test_auth_source.AuthTests.test_local_mode_cannot_bind_publicly) ... ok
+test_service_token_is_distinct_from_user (test_auth_source.AuthTests.test_service_token_is_distinct_from_user) ... ok
+test_csrf_comes_from_html_not_readable_cookie (test_auth_source.SourceContractTests.test_csrf_comes_from_html_not_readable_cookie) ... ok
+test_required_fields_and_unsupported_consent (test_auth_source.SourceContractTests.test_required_fields_and_unsupported_consent) ... ok
+test_concurrent_complete_claims_once (test_core.BookingTests.test_concurrent_complete_claims_once) ... ok
+test_contact_validation (test_core.BookingTests.test_contact_validation) ... ok
+test_identity_isolation (test_core.BookingTests.test_identity_isolation) ... ok
+test_lost_slot_requires_new_review (test_core.BookingTests.test_lost_slot_requires_new_review) ... ok
+test_period_filter_and_required_source_handoff (test_core.BookingTests.test_period_filter_and_required_source_handoff) ... ok
+test_preflight_network_failure_can_retry_without_prior_post (test_core.BookingTests.test_preflight_network_failure_can_retry_without_prior_post) ... ok
+test_price_change_invalidates_approval (test_core.BookingTests.test_price_change_invalidates_approval) ... ok
+test_same_draft_survives_restart (test_core.BookingTests.test_same_draft_survives_restart) ... ok
+test_source_readback_required_for_success (test_core.BookingTests.test_source_readback_required_for_success) ... ok
+test_stale_and_expired_review_rejected (test_core.BookingTests.test_stale_and_expired_review_rejected) ... ok
+test_unapproved_cannot_submit (test_core.BookingTests.test_unapproved_cannot_submit) ... ok
+test_unknown_lost_response_never_reposts (test_core.BookingTests.test_unknown_lost_response_never_reposts) ... ok
+test_verified_once_and_receipt_excludes_contact (test_core.BookingTests.test_verified_once_and_receipt_excludes_contact) ... ok
+test_verified_state_cannot_be_downgraded_by_race (test_core.BookingTests.test_verified_state_cannot_be_downgraded_by_race) ... ok
+test_complete_flow_and_repeat_without_repost (test_http.MCPHTTPTests.test_complete_flow_and_repeat_without_repost) ... ok
+test_metadata_and_health_do_not_claim_alexa_verification (test_http.MCPHTTPTests.test_metadata_and_health_do_not_claim_alexa_verification) ... ok
+test_real_handshake_tools_and_resource (test_http.MCPHTTPTests.test_real_handshake_tools_and_resource) ... ok
+test_review_requires_origin_capability_checkbox (test_http.MCPHTTPTests.test_review_requires_origin_capability_checkbox) ... ok
+test_service_token_cannot_access_personal_draft (test_http.MCPHTTPTests.test_service_token_cannot_access_personal_draft) ... ok
+test_source_failure_surfaces_error (test_http.MCPHTTPTests.test_source_failure_surfaces_error) ... ok
+test_unauthenticated_and_invalid_token_rejected (test_http.MCPHTTPTests.test_unauthenticated_and_invalid_token_rejected) ... ok
+test_untrusted_origin_rejected (test_http.MCPHTTPTests.test_untrusted_origin_rejected) ... Invalid Origin header: https://untrusted.example
+ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 2.027s
+
+OK

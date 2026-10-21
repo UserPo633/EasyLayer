@@ -1,0 +1,17 @@
+test_cancel_is_owner_bound_clears_contact_and_cannot_later_submit (test_bridge_lifecycle.LifecycleTests.test_cancel_is_owner_bound_clears_contact_and_cannot_later_submit) ... ok
+test_expiry_persists_and_scrubs_even_when_approval_is_rejected (test_bridge_lifecycle.LifecycleTests.test_expiry_persists_and_scrubs_even_when_approval_is_rejected) ... ok
+test_pending_record_has_no_contact_and_cannot_be_cancelled (test_bridge_lifecycle.LifecycleTests.test_pending_record_has_no_contact_and_cannot_be_cancelled) ... ok
+test_pre_post_failure_releases_slot_for_another_reviewed_draft (test_bridge_lifecycle.LifecycleTests.test_pre_post_failure_releases_slot_for_another_reviewed_draft) ... ok
+test_read_only_get_does_not_rotate_capability (test_bridge_lifecycle.LifecycleTests.test_read_only_get_does_not_rotate_capability) ... ok
+test_resume_is_owner_bound_and_rotates_only_unapproved_review (test_bridge_lifecycle.LifecycleTests.test_resume_is_owner_bound_and_rotates_only_unapproved_review) ... ok
+test_source_factory_failure_is_before_post_and_can_retry (test_bridge_lifecycle.LifecycleTests.test_source_factory_failure_is_before_post_and_can_retry) ... ok
+test_two_concurrent_drafts_for_same_slot_make_one_source_post (test_bridge_lifecycle.LifecycleTests.test_two_concurrent_drafts_for_same_slot_make_one_source_post) ... ok
+test_unknown_blocks_fresh_draft_after_restart_without_hash (test_bridge_lifecycle.LifecycleTests.test_unknown_blocks_fresh_draft_after_restart_without_hash) ... ok
+test_unresolved_write_is_resumed_before_newer_draft_after_restart (test_bridge_lifecycle.LifecycleTests.test_unresolved_write_is_resumed_before_newer_draft_after_restart) ... ok
+test_upgrade_scrubs_contact_from_old_pending_record_without_reopening_it (test_bridge_lifecycle.LifecycleTests.test_upgrade_scrubs_contact_from_old_pending_record_without_reopening_it) ... ok
+test_verified_slot_blocks_duplicate_but_other_slots_and_owners_are_independent (test_bridge_lifecycle.LifecycleTests.test_verified_slot_blocks_duplicate_but_other_slots_and_owners_are_independent) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.068s
+
+OK

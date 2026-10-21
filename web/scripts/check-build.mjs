@@ -1,0 +1,2 @@
+import fs from'node:fs';import path from'node:path';
+const root=path.resolve('dist');for(const file of ['index.html','watch.html','styles.css','app.mjs','engine.mjs','scene.mjs','assets/poster.png','assets/EasyLayer_Demo.mp4','assets/captions.vtt','assets/transcript.txt','assets/EasyLayer_Source_v0.4.zip']){const p=path.join(root,file);if(!fs.existsSync(p))throw Error('Missing: '+file);if(fs.statSync(p).size>25*1024*1024)throw Error('Asset exceeds 25 MiB: '+file);}console.log('Static assets verified.');

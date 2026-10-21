@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="EasyLayer's self-hosted MCP booking simulator. Read, review and verify an appointment with a clear screen and optional voice commands.">
+  <title>EasyLayer · Simulated Alexa+ booking</title>
+  <link rel="stylesheet" href="/simulator/styles.css">
+  <script src="/simulator/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to booking</a>
+  <header class="topbar">
+    <a class="brand" href="/simulator/" aria-label="EasyLayer home"><span class="brand-mark" aria-hidden="true">e</span> EasyLayer</a>
+    <span class="demo-label">Simulated Alexa+ <span>· Self-hosted MCP</span></span>
+  </header>
+  <main id="main" class="workspace">
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">ONE BOOKING. A CLEAR NEXT STEP.</p><h1 id="page-title">Book with confidence.</h1><p class="lede">Choose a time. Review it yourself. Get a result checked against the booking service.</p></div>
+      <div class="connection"><span id="connection-indicator" class="connection-dot" aria-hidden="true"></span><div><strong id="connection-status">Connecting…</strong><span id="connection-detail">Checking the MCP booking tools</span></div></div>
+    </section>
+
+    <ol class="progress" aria-label="Booking progress">
+      <li id="step-choose" aria-current="step"><span>1</span> Choose a time</li>
+      <li id="step-review"><span>2</span> Review &amp; approve</li>
+      <li id="step-verify"><span>3</span> Verify the booking</li>
+    </ol>
+
+    <div id="notice" class="notice" role="alert" hidden></div>
+    <p id="announcer" class="sr-only" role="status" aria-live="polite"></p>
+
+    <div class="booking-grid">
+      <section class="panel choose-panel" aria-labelledby="choose-heading">
+        <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><div><p class="eyebrow">FROM THE BOOKING SERVICE</p><h2 id="choose-heading">Find your time</h2></div></div>
+        <p id="source-help" class="muted">Services and times come from the connected booking service.</p>
+        <div id="source-error" class="source-error" hidden><h3>Connection needs attention</h3><p>Check the current booking first. Start the local booking service and EasyLayer bridge, then retry the connection. No sample times are shown here.</p><button id="retry-connection" type="button" class="button secondary">Retry connection</button></div>
+        <form id="search-form">
+          <fieldset id="choice-fields" disabled>
+            <legend class="sr-only">Appointment choices</legend>
+            <label for="service">What would you like to book?</label>
+            <select id="service" name="service" required><option value="">Loading services…</option></select>
+            <p id="service-detail" class="field-help"></p>
+            <label for="provider">Who would you like to see?</label>
+            <select id="provider" name="provider" required><option value="">Choose a service first</option></select>
+            <div class="field-row">
+              <div><label for="date">Which day?</label><input id="date" name="date" type="date" required></div>
+              <div><label for="period">Time of day</label><select id="period" name="period"><option value="any">Any time</option><option value="morning">Morning</option><option value="afternoon">Afternoon</option><option value="evening">Evening</option></select></div>
+            </div>
+            <p id="timezone" class="field-help">Times use the provider’s local timezone.</p>
+            <button id="find-times" class="button primary" type="submit">Find available times <span aria-hidden="true">→</span></button>
+          </fieldset>
+        </form>
+        <section id="times-section" class="times-section" aria-labelledby="times-heading" hidden>
+          <h3 id="times-heading" tabindex="-1">Choose an available time</h3>
+          <p id="times-note" class="field-help"></p>
+          <div id="times" class="time-grid" role="group" aria-label="Available times"></div>
+          <button id="create-draft" class="button primary full-width" type="button" disabled>Review selected time <span aria-hidden="true">→</span></button>
+          <p class="small-note">Choosing a time creates a draft. It does not make a booking.</p>
+        </section>
+        <p id="choices-locked" class="lock-note" hidden>Keep working on your current booking on the right.</p>
+      </section>
+
+      <section class="panel booking-panel" aria-labelledby="booking-heading">
+        <div class="section-heading"><span class="section-number" aria-hidden="true">02</span><div><p class="eyebrow">YOUR NEXT STEP</p><h2 id="booking-heading">Your booking, clearly.</h2></div></div>
+        <div id="empty-draft" class="empty-draft"><div class="empty-symbol" aria-hidden="true">✓</div><h3>You’re in control.</h3><p>Choose a time to see one clear summary here. You’ll enter your details and approve before the booking can be sent.</p><div class="assurance"><span aria-hidden="true">↗</span> Contact details stay in the separate review form.</div></div>
+        <div id="active-draft" hidden>
+          <span id="booking-status" class="status-pill">Review needed</span>
+          <h3 id="service-title" class="service-title"></h3>
+          <dl id="booking-summary" class="summary"></dl>
+          <div id="receipt" class="receipt" hidden><span class="receipt-check" aria-hidden="true">✓</span><div><strong>Checked against the original record</strong><p id="receipt-id"></p></div></div>
+          <div class="next-step"><p class="eyebrow">WHAT HAPPENS NEXT</p><p id="next-action"></p></div>
+          <div id="review-unavailable" class="inline-warning" hidden>The private review link is unavailable. Run “resume booking” below to get a fresh link. An older review tab may then become invalid.</div>
+          <div class="draft-actions">
+            <a id="review-link" class="button primary" href="#" target="_blank" rel="noopener noreferrer" hidden>Open secure review <span aria-hidden="true">↗</span></a>
+            <button id="complete-booking" class="button primary" type="button" hidden>Complete approved booking</button>
+            <button id="verify-booking" class="button primary" type="button" hidden>Check existing booking</button>
+            <button id="refresh-status" class="button secondary" type="button">Check approval / status</button>
+            <button id="new-booking" class="button secondary" type="button" hidden>Choose another time</button>
+            <button id="discard-draft" class="text-button" type="button" hidden>Discard unsubmitted draft</button>
+          </div>
+          <p id="draft-id" class="small-note draft-reference"></p>
+        </div>
+      </section>
+    </div>
+
+    <section class="voice-panel" aria-labelledby="voice-heading">
+      <div><p class="eyebrow">OPTIONAL VOICE CONTROLS</p><h2 id="voice-heading">Say it. Check it. Then act.</h2><p class="muted">Try “find times”, then “earlier” or “later” after selecting a time. Also: “resume booking”, “read summary”, “check status”. Approval stays in your hands.</p></div>
+      <form id="command-form" class="command-form"><label for="command">Your command <span class="optional">· review recognized words before running</span></label><div class="command-row"><input id="command" type="text" autocomplete="off" maxlength="160" placeholder="e.g. read summary"><button id="listen" class="button secondary" type="button" disabled>Use microphone</button><button id="run-command" class="button primary" type="submit">Run</button></div><p id="voice-help" class="field-help">You can type any of the six commands above.</p><button id="stop-speaking" class="text-button" type="button" hidden>Stop reading aloud</button></form>
+    </section>
+
+    <details class="evidence"><summary>What this demo actually does</summary><div class="evidence-body"><p>This is an EasyLayer web simulator with a guided interface. It calls the same MCP booking tools and persistent drafts as the assistant integration candidate. It is not a native Alexa+ session.</p><p>Microphone input uses your browser’s speech service, when available. Contact details are entered only on the separate review page. This local demo uses one demo identity; it is not a multi-user sign-in service.</p><p><strong>Recent MCP calls</strong> · tool names only</p><ol id="tool-history" class="tool-history"><li>Waiting for connection</li></ol></div></details>
+    <footer><span>EasyLayer</span><span>Guided simulator · Original-service verification · No native Alexa claim</span></footer>
+  </main>
+</body>
+</html>

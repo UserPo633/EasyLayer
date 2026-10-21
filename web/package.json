@@ -1,0 +1,11 @@
+{
+  "name": "easylayer-demo-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/engine.test.mjs",
+    "build": "node scripts/check-build.mjs"
+  },
+  "license": "GPL-3.0-only"
+}

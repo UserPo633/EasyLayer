@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><title>EasyLayer · Clear choices, together</title>
+<link rel="stylesheet" href="connected.css">
+</head>
+<body>
+<a class="skip" href="#title">Skip to booking</a>
+<header><a class="brand" href="connected.html" aria-label="EasyLayer home"><span class="brand-icon" aria-hidden="true">e</span>EasyLayer<span class="brand-dot">.</span></a><div class="header-actions"><span id="mode" class="badge">Simulated Alexa+ experience</span><button id="language" class="quiet">한국어</button><button id="textsize" class="quiet" aria-label="Increase text size" aria-pressed="false">A＋</button></div></header>
+<main>
+  <div class="intro"><p class="eyebrow" id="eyebrow">A LITTLE GUIDANCE. A LOT MORE INDEPENDENCE.</p><h1 id="headline">Let’s make it easy.</h1><p id="subtitle">Say what you need. See your choices. Stay in control.</p></div>
+  <p id="connection" class="connection"></p>
+  <div class="layout">
+    <section class="workspace card" aria-labelledby="title">
+      <div class="step-row"><span id="progress"></span><span class="live-dot" id="source-state"></span></div>
+      <h2 id="title" tabindex="-1"></h2>
+      <p id="assistant-line" class="assistant-line"></p>
+      <div id="status" role="status" aria-live="polite" class="notice" hidden></div>
+      <div id="content"></div>
+      <section id="conversation" class="conversation" aria-label="Conversation" hidden>
+        <div class="conversation-heading"><h3 id="talk-title">Or tell me what to change</h3><button id="readback" class="quiet" data-action="read">Read aloud</button></div>
+        <form id="request-form"><label for="request" id="request-label">Your request</label><textarea id="request" rows="2" maxlength="1000" placeholder="Thursday morning instead"></textarea><div class="row"><button type="button" data-action="speak" id="speak">Speak</button><button type="button" data-action="stop" id="stop" hidden>Stop</button><button type="submit" class="primary" id="send">Send request <span aria-hidden="true">↗</span></button></div></form>
+        <div class="options-line"><label class="check"><input type="checkbox" id="voice-output"><span id="voice-label">Speak guidance</span></label><label class="planner-label"><span id="planner-label">Understanding</span><select id="planner-mode"><option value="bedrock">Amazon Bedrock</option><option value="basic">Basic commands · no AI</option></select></label></div>
+        <p id="command-help" class="small"></p><p id="planner-status" class="small" aria-live="polite"></p>
+      </section>
+    </section>
+    <aside class="summary card" aria-labelledby="summary-title"><p class="eyebrow" id="summary-eyebrow">ALWAYS HERE TO REVIEW</p><h2 id="summary-title">Your choices</h2><div id="selection"></div><div class="summary-footer"><span aria-hidden="true">✓</span><p id="assurance">You decide. We check the details.</p></div><a href="/index.php/booking" target="_blank" rel="noopener noreferrer" id="original">Open original booking site ↗</a></aside>
+  </div>
+</main>
+<footer><p id="foot"></p><details><summary id="about-label">About this prototype</summary><p id="technical"></p></details></footer>
+<script src="source.js"></script><script src="booking-session.js"></script><script src="basic-commands.js"></script><script src="connected.js"></script>
+</body></html>

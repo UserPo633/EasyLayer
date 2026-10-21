@@ -1,0 +1,26 @@
+{
+  "runtime": "PHP 8.3.6 executed",
+  "upstream": "1.6.0 ZIP hash verified",
+  "database_start": "observed ready for connections; separate-call connectivity failed",
+  "database_initialization_retry": "failed: ddl_recovery.log fsync errno 5",
+  "docker_build": "not run: docker absent",
+  "native_http_checks": "not run to completion",
+  "browser_ui": "not run",
+  "bedrock": "Converse integration implemented; no actual invocation",
+  "product_ui": "offline simulation plus source-connected prototype code; live/browser validation pending",
+  "static_validation": {
+    "php_syntax": "passed",
+    "python_syntax": "passed",
+    "shell_syntax": "passed",
+    "yaml_parse": "passed",
+    "docker_compose_validation": "not_run"
+  },
+  "ui_validation": {
+    "javascript_tests": "14 passed; mocks for source transport",
+    "planner_tests": "4 passed; fake model client",
+    "browser_visual": "not run",
+    "assistive_technology": "not run",
+    "live_source_booking": "not run",
+    "speech_recognition": "not run"
+  }
+}

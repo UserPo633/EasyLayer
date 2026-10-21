@@ -1,0 +1,28 @@
+EasyLayer — Demo transcript
+
+English narration: ElevenLabs / Kayleigh - Poised Tech Tutorial Narrator / Eleven v4.
+Captioned automated walkthrough. Sample data only.
+
+Booking a class should not mean navigating a maze of forms. EasyLayer helps people choose, review, and finish one task, with a clear next step.
+
+This is an Alexa Plus experience simulation. The hosted demo uses sample data, and never creates a real appointment.
+
+Let's try a pottery workshop. EasyLayer keeps the provider, date, duration, and price visible. Choose an available time, or use the guided command, later, to move to the next option.
+
+A selected time becomes a draft, not a booking. The summary makes it clear what will happen before anything is submitted.
+
+Now imagine getting interrupted. Pause the task, then resume it. The same draft returns with the same details. Progress is kept in this browser for the demonstration.
+
+Next, review the appointment and explicitly approve it. The demo uses a fictional contact, so no personal information is needed. Approved still does not mean booked.
+
+Here is the difficult case: a response is lost after submission. The simulator creates one sample record, but the result stays uncertain. It does not tell the user the booking succeeded.
+
+Repeated attempts do not create another record. EasyLayer asks the person to check the existing result instead. When the sample record is read back and matches, the status becomes verified. The record counter stays at one.
+
+Try the second scenario: the selected time becomes unavailable before submission. EasyLayer stops, explains what changed, and requires a new choice and review.
+
+The downloadable Python project contains the self-hosted MCP server, persistent drafts, and an adapter targeting Easy Appointments. The current hosted demo is browser-only. It is not connected to native Alexa or a live booking service.
+
+The earlier backend release recorded one hundred and seventeen passing automated tests using controlled sources. Real service and real user validation remain next steps.
+
+EasyLayer is built around a simple promise: clear choices, recoverable progress, and an honest result. Try the interactive demo, explore the failure scenarios, and inspect the source.

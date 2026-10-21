@@ -1,0 +1,44 @@
+services:
+  db:
+    image: mariadb:10.11.14
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Run python scripts/init_env.py first}
+      MARIADB_DATABASE: easyappointments
+      MARIADB_USER: easylayer
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Run python scripts/init_env.py first}
+    volumes:
+    - db_data:/var/lib/mysql
+    healthcheck:
+      test:
+      - CMD
+      - healthcheck.sh
+      - --connect
+      - --innodb_initialized
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  app:
+    build: .
+    environment:
+      EA_BASE_URL: http://localhost:8080
+      EA_DB_PASSWORD: ${DB_PASSWORD}
+    ports:
+    - 127.0.0.1:8080:80
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+    - app_storage:/var/www/html/storage
+  planner:
+    build: ./planner
+    profiles:
+    - ai
+    environment:
+      AWS_REGION: ${AWS_REGION:-ap-northeast-2}
+      BEDROCK_MODEL_ID: ${BEDROCK_MODEL_ID:-}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
+      AWS_SESSION_TOKEN: ${AWS_SESSION_TOKEN:-}
+volumes:
+  db_data: null
+  app_storage: null

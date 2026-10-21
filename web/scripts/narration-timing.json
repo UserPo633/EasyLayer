@@ -1,0 +1,237 @@
+{
+  "voice": "Kayleigh - Poised Tech Tutorial Narrator",
+  "provider": "ElevenLabs",
+  "model": "Eleven v4",
+  "source_seconds": 132.75425,
+  "export_seconds": 134.0,
+  "sentence_timing_method": "Measured pauses, manually matched to the script",
+  "chapters": [
+    {
+      "chapter": "01 / THE PROBLEM",
+      "start": 0,
+      "end": 10.25
+    },
+    {
+      "chapter": "02 / WHAT YOU ARE WATCHING",
+      "start": 10.25,
+      "end": 17.759999999999998
+    },
+    {
+      "chapter": "03 / CHOOSE A TIME",
+      "start": 17.759999999999998,
+      "end": 30.157
+    },
+    {
+      "chapter": "04 / SAVE A DRAFT",
+      "start": 30.157,
+      "end": 37.593500000000006
+    },
+    {
+      "chapter": "05 / PAUSE AND RESUME",
+      "start": 37.593500000000006,
+      "end": 48.2715
+    },
+    {
+      "chapter": "06 / EXPLICIT APPROVAL",
+      "start": 48.2715,
+      "end": 59.1415
+    },
+    {
+      "chapter": "07 / THE RESPONSE IS LOST",
+      "start": 59.1415,
+      "end": 71.0025
+    },
+    {
+      "chapter": "08 / CHECK BEFORE REPEATING",
+      "start": 71.0025,
+      "end": 84.85300000000001
+    },
+    {
+      "chapter": "09 / AVAILABILITY CHANGES",
+      "start": 84.85300000000001,
+      "end": 95.2425
+    },
+    {
+      "chapter": "10 / THE IMPLEMENTATION",
+      "start": 95.2425,
+      "end": 110.186
+    },
+    {
+      "chapter": "11 / EVIDENCE AND NEXT STEPS",
+      "start": 110.186,
+      "end": 120.696
+    },
+    {
+      "chapter": "12 / TRY EASYLAYER",
+      "start": 120.696,
+      "end": 134.0
+    }
+  ],
+  "captions": [
+    {
+      "start": 0,
+      "end": 3.896,
+      "text": "Booking a class should not mean navigating a maze of forms."
+    },
+    {
+      "start": 4.351,
+      "end": 9.912,
+      "text": "EasyLayer helps people choose, review, and finish one task, with a clear next step."
+    },
+    {
+      "start": 10.588,
+      "end": 13.287,
+      "text": "This is an Alexa Plus experience simulation."
+    },
+    {
+      "start": 13.681,
+      "end": 17.47,
+      "text": "The hosted demo uses sample data, and never creates a real appointment."
+    },
+    {
+      "start": 18.05,
+      "end": 19.524,
+      "text": "Let's try a pottery workshop."
+    },
+    {
+      "start": 20.148,
+      "end": 24.55,
+      "text": "EasyLayer keeps the provider, date, duration, and price visible."
+    },
+    {
+      "start": 25.02,
+      "end": 29.928,
+      "text": "Choose an available time, or use the guided command, later, to move to the next option."
+    },
+    {
+      "start": 30.386,
+      "end": 33.351,
+      "text": "A selected time becomes a draft, not a booking."
+    },
+    {
+      "start": 33.83,
+      "end": 37.307,
+      "text": "The summary makes it clear what will happen before anything is submitted."
+    },
+    {
+      "start": 37.88,
+      "end": 39.529,
+      "text": "Now imagine getting interrupted."
+    },
+    {
+      "start": 39.957,
+      "end": 41.71,
+      "text": "Pause the task, then resume it."
+    },
+    {
+      "start": 42.155,
+      "end": 44.963,
+      "text": "The same draft returns with the same details."
+    },
+    {
+      "start": 45.368,
+      "end": 48.026,
+      "text": "Progress is kept in this browser for the demonstration."
+    },
+    {
+      "start": 48.517,
+      "end": 51.686,
+      "text": "Next, review the appointment and explicitly approve it."
+    },
+    {
+      "start": 52.13,
+      "end": 56.129,
+      "text": "The demo uses a fictional contact, so no personal information is needed."
+    },
+    {
+      "start": 56.588,
+      "end": 58.901,
+      "text": "Approved still does not mean booked."
+    },
+    {
+      "start": 59.382,
+      "end": 63.53,
+      "text": "Here is the difficult case: a response is lost after submission."
+    },
+    {
+      "start": 63.985,
+      "end": 68.129,
+      "text": "The simulator creates one sample record, but the result stays uncertain."
+    },
+    {
+      "start": 68.505,
+      "end": 70.763,
+      "text": "It does not tell the user the booking succeeded."
+    },
+    {
+      "start": 71.242,
+      "end": 73.856,
+      "text": "Repeated attempts do not create another record."
+    },
+    {
+      "start": 74.348,
+      "end": 77.721,
+      "text": "EasyLayer asks the person to check the existing result instead."
+    },
+    {
+      "start": 78.22,
+      "end": 82.415,
+      "text": "When the sample record is read back and matches, the status becomes verified."
+    },
+    {
+      "start": 82.855,
+      "end": 84.581,
+      "text": "The record counter stays at one."
+    },
+    {
+      "start": 85.125,
+      "end": 89.813,
+      "text": "Try the second scenario: the selected time becomes unavailable before submission."
+    },
+    {
+      "start": 90.201,
+      "end": 94.939,
+      "text": "EasyLayer stops, explains what changed, and requires a new choice and review."
+    },
+    {
+      "start": 95.546,
+      "end": 99.68,
+      "text": "The downloadable Python project contains the self-hosted MCP server, persistent drafts,"
+    },
+    {
+      "start": 99.68,
+      "end": 103.464,
+      "text": "and an adapter targeting Easy Appointments."
+    },
+    {
+      "start": 103.834,
+      "end": 106.11,
+      "text": "The current hosted demo is browser-only."
+    },
+    {
+      "start": 106.412,
+      "end": 109.995,
+      "text": "It is not connected to native Alexa or a live booking service."
+    },
+    {
+      "start": 110.377,
+      "end": 116.584,
+      "text": "The earlier backend release recorded one hundred and seventeen passing automated tests using controlled sources."
+    },
+    {
+      "start": 116.963,
+      "end": 120.44,
+      "text": "Real service and real user validation remain next steps."
+    },
+    {
+      "start": 120.952,
+      "end": 127.632,
+      "text": "EasyLayer is built around a simple promise: clear choices, recoverable progress, and an honest result."
+    },
+    {
+      "start": 128.017,
+      "end": 132.529,
+      "text": "Try the interactive demo, explore the failure scenarios, and inspect the source."
+    }
+  ]
+}

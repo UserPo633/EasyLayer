@@ -1,0 +1,6 @@
+
+> easylayer-mcp-view@0.4.0 build
+> node build.mjs
+
+Built MCP Apps resource: dist/booking.html
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.

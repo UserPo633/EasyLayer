@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-09-21T11:59:06.482321+00:00",
+  "checks": {
+    "docker": {
+      "available": false
+    },
+    "node": {
+      "available": true
+    },
+    "python": {
+      "available": true
+    },
+    "aws_region": {
+      "configured": false
+    },
+    "bedrock_model": {
+      "configured": false
+    },
+    "aws_auth": {
+      "environment_keys_present": false,
+      "note": "Host IAM/profile credentials may also be used by host-side benchmark; no live call made."
+    }
+  },
+  "live_booking_verified": false,
+  "live_bedrock_verified": false,
+  "ready_for_docker": false
+}

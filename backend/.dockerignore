@@ -1,0 +1,8 @@
+.env
+evidence
+__pycache__
+
+node_modules
+.git
+.local-admin.json
+*.log
